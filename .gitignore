@@ -1,0 +1,18 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# editor settings
+/.vscode
+
+# dependencies
+/node_modules
+
+# server, data, build
+/.data
+/vendor
+/build
+
+# wp-content
+/wp-content
+
+# lock files
+*.lock
