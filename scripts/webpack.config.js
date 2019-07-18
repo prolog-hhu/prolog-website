@@ -44,7 +44,11 @@ module.exports = {
   module: {
     rules: [
       // Disable require.ensure as it's not a standard language feature.
-      { parser: { requireEnsure: false } },
+      {
+        parser: {
+          requireEnsure: false
+        }
+      },
       // Transform ES6 with Babel
       {
         test: /\.js?$/,
@@ -75,8 +79,8 @@ module.exports = {
             }
           },
           "sass-loader"
-          ],
-        }
+        ],
+      }
     ],
   },
   optimization: {
@@ -117,17 +121,17 @@ module.exports = {
       filename: 'assets.json',
     }),
     DEV &&
-      new FriendlyErrorsPlugin({
-        clearConsole: false,
-      }),
+    new FriendlyErrorsPlugin({
+      clearConsole: false,
+    }),
     DEV &&
-      new BrowserSyncPlugin({
-        notify: false,
-        host: 'localhost',
-        port: 4000,
-        logLevel: 'silent',
-        files: ['./*.php'],
-        proxy: 'http://localhost:9009/',
-      }),
+    new BrowserSyncPlugin({
+      notify: false,
+      host: 'localhost',
+      port: 4000,
+      logLevel: 'silent',
+      files: ['**/*.php'],
+      proxy: 'http://localhost:9009/',
+    }),
   ].filter(Boolean),
 };

@@ -1,2 +1,16 @@
-@import "styles/global-vars";
-@import "styles/base";
+// SCSS Master File
+//
+// Imports all SCSS files in their intended order for easy mass-inclusion.
+// Should you need specific files, you can easily use separate `@import`s.
+
+// Global requirements
+@import "styles/variables/index.scss";
+@import "styles/mixins/index.scss";
+
+// Modules
+@import "styles/base/index.scss";
+@import "styles/layout/index.scss";
+
+
+// Utility (overrides)
+@import "styles/utilities/index.scss";
