@@ -1,0 +1,19 @@
+#navigation {
+
+    display: none;
+
+    &.active {
+        display: block;
+    }
+
+    li a {
+        color: inherit;
+    }
+}
+
+#colophon {
+
+    li a {
+        color: inherit;
+    }
+}

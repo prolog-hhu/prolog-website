@@ -1,24 +1,9 @@
 <?php
 
-
-// Clean up wordpres <head>
-remove_action('wp_head', 'rsd_link'); // remove really simple discovery link
-remove_action('wp_head', 'wp_generator'); // remove wordpress version
-remove_action('wp_head', 'feed_links', 2); // remove rss feed links (make sure you add them in yourself if youre using feedblitz or an rss service)
-remove_action('wp_head', 'feed_links_extra', 3); // removes all extra rss feed links
-remove_action('wp_head', 'index_rel_link'); // remove link to index page
-remove_action('wp_head', 'wlwmanifest_link'); // remove wlwmanifest.xml (needed to support windows live writer)
-remove_action('wp_head', 'start_post_rel_link', 10, 0); // remove random post link
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); // remove parent post link
-remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0); // remove the next and previous post links
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
-
-// Remove Emoji Functions
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-remove_action('wp_print_styles', 'print_emoji_styles');
-remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-remove_action( 'admin_print_styles', 'print_emoji_styles' );
+include('inc/head-cleanup.php');
+include('inc/class-modifier.php');
+include('inc/register-post-types.php');
+include('inc/backend-customizer.php');
 
 /**
  * Theme assets
@@ -47,7 +32,8 @@ add_action('after_setup_theme', function () {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'mini')
+        'primary_navigation' => __('Primary Navigation', 'prlg'),
+        'footer_navigation' => __('Footer Navigation', 'prlg')
     ]);
 
     /**
@@ -96,20 +82,4 @@ function get_post_for_url($data)
     return $controller->get_item($request);
 }
 
-add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
-
-// Add page slug to body class, love this - Credit: Starkers Wordpress Theme
-function add_slug_to_body_class($classes) {
-    global $post;
-    if (is_home()) {
-        $key = array_search('blog', $classes);
-        if ($key > -1) {
-            unset($classes[$key]);
-        }
-    } elseif (is_page()) {
-        $classes[] = sanitize_html_class($post->post_name);
-    } elseif (is_singular()) {
-        $classes[] = sanitize_html_class($post->post_name);
-    }
-    return $classes;
-}
+?>

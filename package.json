@@ -1,13 +1,13 @@
 {
-  "name": "presspack",
+  "name": "prolog.cl.phil.hhu.de",
   "version": "0.0.1",
-  "description": "WordPress, Docker, Webpack, Win.",
+  "description": "WordPress Theme based on jaredpalmer's PressPack and Github Primer.",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node ./scripts/start.js",
-    "build": "cross-env NODE_ENV=production node ./scripts/build.js",
+    "start": "cross-env NODE_ENV=development node ./webpack/start.js",
+    "build": "cross-env NODE_ENV=production node ./webpack/build.js",
     "postinstall": "npm run build"
   },
-  "author": "jaredpalmer",
+  "author": "Simon Münker",
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.3.1"

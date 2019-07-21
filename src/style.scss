@@ -4,13 +4,17 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
-@import "styles/variables/index.scss";
-@import "styles/mixins/index.scss";
+@import "scss/variables/index.scss";
+@import "scss/mixins/index.scss";
 
 // Modules
-@import "styles/base/index.scss";
-@import "styles/layout/index.scss";
+@import "scss/base/index.scss";
+@import "scss/layout/index.scss";
+@import "scss/navigation/index.scss";
+
+@import "scss/forms/index.scss";
+@import "scss/button/index.scss";
 
 
 // Utility (overrides)
-@import "styles/utilities/index.scss";
+@import "scss/utilities/index.scss";
