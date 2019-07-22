@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * Register custom post types
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */ 
 
 add_action( 'init', 'wiki_init' );
 /**

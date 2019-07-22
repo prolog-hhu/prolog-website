@@ -1,6 +1,19 @@
+ <?php
+/**
+ * Template part for footer colophon
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */
+
+?>
+
 <footer id="colophon" class="py-3 bg-gray-dark">
-    <div class="container-xl px-4">
+    <div class="container-xl px-3">
         <div class="d-flex flex-justify-between flex-items-center">
+
             <?php 
                 wp_nav_menu(
                     array(
@@ -11,6 +24,7 @@
                     )
                 );
             ?>
+
         </div>
     </div>
 </footer>

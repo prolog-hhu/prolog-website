@@ -1,4 +1,10 @@
 <?php
+/**
+ * WordPress head removal hooks and action
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */ 
 
 // Clean up wordpress <head>
 remove_action('wp_head', 'rsd_link'); // remove really simple discovery link

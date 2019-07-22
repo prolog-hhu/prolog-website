@@ -1,30 +1,35 @@
+<?php
+/**
+ * The template for displaying page/post (default)
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#home-page-display
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */
+?>
+
 <?php get_header(); ?>
 
-	<main class="container-xl px-4 py-6">
+	<main class="container-xl px-3 py-6">
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+		<?php
+		if ( have_posts() ) {
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			// Load posts loop.
+			while ( have_posts() ) {
+				the_post();
+				
+				get_template_part( 'template-parts/content/content' );
+			}
 
-				<h1><?php the_title(); ?></h1>
-			
-				<?php the_content(); ?>
+		} else {
 
-			</article>
-			<!-- /article -->
+			// If no content, include the "No posts found" template.
+			get_template_part( 'template-parts/content/content', 'none' );
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
+		}
+		?>
 
 	</main>
 <?php get_footer(); ?>

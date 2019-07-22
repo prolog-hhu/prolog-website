@@ -1,4 +1,10 @@
 <?php
+/**
+ * Menu modifying functions for custom class editing
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */ 
 
 // Add page slug to body class, love this - Credit: Starkers Wordpress Theme
 function add_slug_to_body_class($classes) {

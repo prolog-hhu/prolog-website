@@ -1,3 +1,14 @@
+<?php
+/**
+ * This is the template that displays all of the <head>, <topbar> and <navigation>
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -10,5 +21,5 @@
 
 	<body <?php body_class(); ?>>
 
-	<?php get_template_part( 'template-parts/topbar' ); ?>
-	<?php get_template_part( 'template-parts/navigation' ); ?>
+	<?php get_template_part( 'template-parts/topbar/topbar' ); ?>
+	<?php get_template_part( 'template-parts/navigation/navigation' ); ?>

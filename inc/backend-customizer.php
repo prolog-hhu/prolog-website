@@ -1,4 +1,10 @@
-<?php 
+<?php
+/**
+ * Backend related functions for customization
+ *
+ * @package WordPress
+ * @since 1.0.0
+ */ 
 
 /**
 * removes unwanted menu pages in the backend
