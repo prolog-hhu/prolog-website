@@ -11,19 +11,40 @@ h6 {
   margin-bottom: 0;
 }
 
-h1 { @include h1; }
-h2 { @include h2; }
-h3 { @include h3; }
-h4 { @include h4; }
-h5 { @include h5; }
-h6 { @include h6; }
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4 {
+  @include h4;
+}
+
+h5 {
+  @include h5;
+}
+
+h6 {
+  @include h6;
+}
 
 // Body text
 // --------------------------------------------------
 
 p {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: $spacer-3;
+
+  @include breakpoint(md) {
+    font-size: 105%;
+  }
 }
 
 small {
@@ -44,6 +65,21 @@ ol {
   margin-bottom: 0;
 }
 
+ul:not([class]),
+ol:not([class]) {
+  padding-left: $spacer-3;
+  margin-top: $spacer-3;
+  margin-bottom: $spacer-3;
+
+  li {
+    padding-bottom: $spacer-2;
+
+    @include breakpoint(md) {
+      font-size: 105%;
+    }
+  }
+}
+
 ol ol,
 ul ol {
   list-style-type: lower-roman;
@@ -60,6 +96,7 @@ dd {
   margin-left: 0;
 }
 
+
 // Code
 // --------------------------------------------------
 
@@ -71,7 +108,7 @@ code {
 
 pre {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: $spacer-3;
   font-family: $mono-font;
   font-size: $font-size-small;
 }

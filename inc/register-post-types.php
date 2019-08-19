@@ -44,6 +44,7 @@ function wiki_init() {
 		'hierarchical'       => false,
 		'menu_position'      => 20,
 		'menu_icon'          => 'dashicons-welcome-learn-more',
+		'show_in_rest' 	     => true,
 		'supports'           => array( 'title', 'editor', 'author', 'thumbnail' )
 	);
 
