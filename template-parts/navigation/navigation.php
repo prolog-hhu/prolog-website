@@ -11,10 +11,11 @@
 ?>
 
  <header id="navigation"
-     class="col-9 col-md-5 col-lg-4 col-xl-3 position-absolute top-0 right-0 height-stretch bg-gray box-shadow-large">
+     class="col-10 col-md-7 col-lg-6 col-xl-4 position-fixed top-0 right-0 height-stretch bg-gray box-shadow-large">
 
-     <div class="d-flex flex-justify-end bg-gray-dark border-bottom border-white-fade-50">
-          <?php get_template_part( 'template-parts/navigation/navigation', 'close' ); ?>
+     <div class="d-flex flex-justify-between flex-items-center bg-gray-dark border-bottom border-white-fade-50">
+        <span class="f2 text-white text-bold px-3">Navigation</span>
+        <?php get_template_part( 'template-parts/navigation/navigation', 'close' ); ?>
      </div>
 
      <?php 

@@ -9,7 +9,7 @@
  */
 ?>
 
-<form id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+<form id="searchform" action="/" method="get">
     <div class="d-flex">
         <input type="search" name="search" class="search-field form-control mr-1 mr-md-2"
                 placeholder="<?php echo esc_attr_x( 'Suche..', 'placeholder' ) ?>"

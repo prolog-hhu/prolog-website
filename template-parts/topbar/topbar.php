@@ -19,9 +19,7 @@
             <div class="d-flex flex-justify-between flex-items-center">
 
                 <?php
-                    if ( !is_search() && !is_404() ) {
-                        get_search_form();
-                    }
+                    get_search_form();
 
                     get_template_part( 'template-parts/topbar/topbar', 'openNav' );
                 ?>

@@ -12,15 +12,15 @@
 
 <?php get_header(); ?>
 
-<main class="container-xl px-3 py-6">
+<main class="container-md px-3 py-6">
 
 	<?php if ( have_posts() ) : ?>
 
-		<header class="page-header">
-			<h1 class="page-title">
-				<?php _e( 'Search results for:', 'twentynineteen' ); ?>
+		<header class="mb-4">
+			<h1>
+				<?php _e( 'Suchergebnisse für:', 'twentynineteen' ); ?>
+				<span class="text-italic">'<?php echo get_search_query(); ?>'</span>
 			</h1>
-			<div class="page-description"><?php echo get_search_query(); ?></div>
 		</header><!-- .page-header -->
 
 		<?php
