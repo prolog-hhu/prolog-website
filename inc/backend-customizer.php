@@ -18,7 +18,7 @@ function remove_menus() {
   remove_menu_page( 'edit-comments.php' );          //Comments
 
 	// remove_menu_page( 'upload.php' );                 //Media
-	remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	// remove_menu_page( 'edit.php?post_type=page' );    //Pages
 	
 	remove_menu_page( 'themes.php' );                 //Appearance
 	// remove_menu_page( 'plugins.php' );                //Plugins
@@ -49,5 +49,20 @@ function register_menus() {
 
 }
 add_action( 'admin_menu', 'register_menus' );
+
+
+/**
+ * Hide admin bar from certain user roles (show only for admins)
+ */
+function hide_admin_bar( $show ) {
+
+	if ( ! current_user_can( 'administrator' ) ) :
+		return false;
+	endif;
+
+	return $show;
+
+}
+add_filter( 'show_admin_bar', 'hide_admin_bar' );
 
 ?>

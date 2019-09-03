@@ -19,7 +19,10 @@
             <div class="d-flex flex-justify-between flex-items-center">
 
                 <?php
+                    
                     get_search_form();
+
+                    get_template_part( 'template-parts/topbar/topbar', 'loginOut' );
 
                     get_template_part( 'template-parts/topbar/topbar', 'openNav' );
                 ?>
