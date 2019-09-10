@@ -65,6 +65,10 @@ button {
   border-radius: 0;
 }
 
+textarea {
+  resize: vertical;
+}
+
 // increase the selector specificity for [hidden]
 // so that it always overrides utility classes (.d-block, etc.)
 [hidden][hidden] {
