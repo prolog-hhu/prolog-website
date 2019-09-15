@@ -13,14 +13,13 @@
  <a class="d-flex flex-justify-between flex-items-center" href="<?php echo get_bloginfo( 'url' ); ?>"
      title="<?php echo get_bloginfo( 'description' ); ?>">
 
-     <svg class="mr-2 lh-0" width="48" height="48" viewBox="0 0 832 700" aria-hidden="true" version="1.1">
-         <path
-             d="M573.096,203.038c-15.535,112.445 -104.625,201.535 -217.069,217.07c15.535,-112.444 104.625,-201.534 217.069,-217.07Z"
-             style="fill:#404040;" />
-         <path d="M618.052,574.453c-90.495,68.525 -216.487,68.525 -306.982,0c90.495,-68.525 216.487,-68.525 306.982,0Z"
-             style="fill:#404040;" />
-         <circle cx="464.561" cy="311.573" r="82.379" style="fill:#404040;" />
-         <circle cx="464.561" cy="311.573" r="229.429" style="fill:none;stroke:#424242;stroke-width:80px;" />
+     <svg class="mr-2 lh-0" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true" version="1.1">
+        <path d="M31.33,15.522c-1.049,7.594 -7.066,13.611 -14.66,14.66c1.049,-7.594 7.066,-13.611 14.66,-14.66Z"
+            style="fill:#404040;fill-rule:nonzero;" />
+        <path d="M34.367,40.607c-6.112,4.628 -14.622,4.628 -20.734,0c6.112,-4.628 14.622,-4.628 20.734,0Z"
+            style="fill:#404040;fill-rule:nonzero;" />
+        <circle cx="24" cy="22.852" r="5.564" style="fill:#404040;" />
+        <circle cx="24" cy="22.852" r="15.495" style="fill:none;stroke:#404040;stroke-width:5.4px;" />
      </svg>
 
      <span class="text-bold muted-link hide-sm">

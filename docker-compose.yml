@@ -16,7 +16,7 @@ services:
       - db
     image: wordpress:5.0.2-apache
     volumes:
-      - ".:/var/www/html/wp-content/themes/presspack"
+      - ".:/var/www/html/wp-content/themes/theming"
       - "./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini"
     links:
       - db

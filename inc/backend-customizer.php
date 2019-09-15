@@ -11,21 +11,24 @@
 */
 function remove_menus() {
 
-	// remove_menu_page( 'index.php' );                  //Dashboard
-  // remove_menu_page( 'jetpack' );                    //Jetpack* 
+	// remove_menu_page( 'index.php' );                   //Dashboard
+  // remove_menu_page( 'jetpack' );                     //Jetpack* 
     
-  remove_menu_page( 'edit.php' );                   //Posts
-  remove_menu_page( 'edit-comments.php' );          //Comments
+  remove_menu_page( 'edit.php' );                       //Posts
+  remove_menu_page( 'edit-comments.php' );              //Comments
 
-	// remove_menu_page( 'upload.php' );                 //Media
-	// remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	// remove_menu_page( 'upload.php' );                  //Media
+	// remove_menu_page( 'edit.php?post_type=page' );     //Pages
 	
-	remove_menu_page( 'themes.php' );                 //Appearance
-	// remove_menu_page( 'plugins.php' );                //Plugins
-  // remove_menu_page( 'users.php' );                  //Users
-  // remove_menu_page( 'tools.php' );                  //Tools
+	remove_menu_page( 'themes.php' );                     //Appearance
+	// remove_menu_page( 'plugins.php' );                 //Plugins
+  // remove_menu_page( 'users.php' );                   //Users
+  // remove_menu_page( 'tools.php' );                   //Tools
     
-  // remove_menu_page( 'options-general.php' );        //Settings 
+  //
+  // Settings 
+  //
+  // remove_menu_page( 'options-general.php' );        
   remove_submenu_page('options-general.php', 'options-writing.php');
   remove_submenu_page('options-general.php', 'options-discussion.php');
   remove_submenu_page('options-general.php', 'options-permalink.php');
@@ -56,13 +59,43 @@ add_action( 'admin_menu', 'register_menus' );
  */
 function hide_admin_bar( $show ) {
 
-	if ( ! current_user_can( 'administrator' ) ) :
-		return false;
-	endif;
+	if ( ! current_user_can( 'administrator' ) ) {		
+    return false;
+	};
 
 	return $show;
-
 }
 add_filter( 'show_admin_bar', 'hide_admin_bar' );
+
+
+/**
+ * Changes the Login Logo 
+ * src: https://codex.wordpress.org/Customizing_the_Login_Form
+ */
+function change_login_logo() { ?>
+
+    <style type="text/css">
+
+        #login h1 a, .login h1 a {
+          background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/build/media/branding.svg);
+          height: 320px;
+          width: 320px;
+          background-size: 320px 320px;
+          background-repeat: no-repeat;
+        }
+        
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'change_login_logo' );
+
+
+/**
+ * Changes the Login Logo Link
+ * src: https://codex.wordpress.org/Customizing_the_Login_Form
+ */
+function change_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'change_login_logo_url' );
 
 ?>

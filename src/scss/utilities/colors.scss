@@ -4,9 +4,19 @@
 
 
 // background colors
-/* Set the background to $bg-white */
+/* Set the background to $white */
 .bg-white {
   background-color: $white !important;
+}
+
+/* Set the background to $bg-black */
+.bg-black {
+  background-color: $black !important;
+}
+
+/* Set the background to transparent */
+.bg-transparent {
+  background-color: transparent !important;
 }
 
 /* Set the background to $bg-blue */
@@ -157,6 +167,11 @@ $shades in $hue-maps {
   color: $white !important;
 }
 
+/* Set the text color to transparent */
+.text-transparent {
+  color: transparent !important;
+}
+
 /* Set the text color to inherit */
 .text-inherit {
   color: inherit !important;
@@ -197,5 +212,13 @@ $shades in $hue-maps {
   &:hover {
     color: $blue !important;
     text-decoration: none;
+  }
+}
+
+// Generate a opacity utility for every step in opacty
+@each $index,
+$anmount in $opacity-steps {
+  .opacity-#{$index}0 {
+    opacity: $anmount;
   }
 }
