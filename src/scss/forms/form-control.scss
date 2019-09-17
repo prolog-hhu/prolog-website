@@ -222,3 +222,7 @@ input::-webkit-inner-spin-button {
     font-weight: $font-weight-bold;
   }
 }
+
+.resize-none {
+  resize: none;
+}

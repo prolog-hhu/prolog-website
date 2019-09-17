@@ -25,35 +25,34 @@
 			}
 		?>
 
-		<section class="gutter d-flex flex-wrap flex-justify-between flex-items-top mb-4">
+		<section class="gutter d-flex flex-wrap flex-justify-between flex-items-top flex-content-stretch mb-4">
 
 			<article class="col-12 col-md-6">
 
+				<label class="d-block mb-1" for="runquery">1. Enter your program:</label>
 				<div class="mb-3 position-relative">
 					<textarea 
 						name="programcontent" 
 						id="programcontent"
-						class="form-control input-monospace position-absolute top-0 text-transparent bg-transparent p-3 lh-default"
+						class="form-control text-mono position-absolute top-0 text-transparent bg-transparent border-0 caret-gray-light p-3 lh-default resize-none"
 						autocorrect="off" 
 						autocapitalize="off" 
 						spellcheck="false"
-						rows="24" ></textarea>
+						rows="26" ></textarea>
 					<pre class="d-block top-0 p-3 m-0"><code id="programcode" lang="prolog" class="language-prolog d-block width-full"></code></pre>
 				</div>
 
-				<div class="mb-3">
-					<label class="f5 d-block" for="programfile">Program upload:</label>
-					<input name="programfile" id="programfile" type="file" size="50" accept="text/*"> 
+				<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
+						<label>or upload a file:</label> <input name="programfile" id="programfile" type="file" size="50" accept="text/*"> 
+						<button class="btn btn-primary" name="programconsult" id="programconsult">Consult</button>
 				</div>
-
-				<button class="btn btn-primary" name="programconsult" id="programconsult">Consult</button>
 
 			</article>
 
 			<article class="col-12 col-md-6">
 
 				<div class="mb-3">
-					<label class="f5 d-block" for="runquery">Query:</label>
+					<label class="d-block mb-1" for="runquery">2. Run a query:</label>
 
 					<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
 						<input class="form-control input-monospace flex-auto width-auto" name="querycontent" id="querycontent" type="text">
@@ -61,8 +60,8 @@
 					</div>
 				</div>
 
-				<label class="f5 d-block" for="output">Output:</label>
-				<div id="output" class="height-stretch"></div>
+				<label class="d-block mb-1" for="output">3. Take a look at the output:</label>
+				<div id="output" class="text-mono height-fit"></div>
 
 			</article>
 
@@ -72,29 +71,12 @@
 
 			<h3>Resources:</h3>
 
-			<strong>Compiler:</strong> <a href="http://tau-prolog.org/" target="_blank">Tau Prolog</a>, a Prolog interpreter fully implemented in JavaScript, released under the BSD 3-Clause License.<br />
+			<strong>Prolog-Interpreter:</strong> <a href="http://tau-prolog.org/" target="_blank">Tau Prolog</a>, a Prolog interpreter fully implemented in JavaScript, released under the BSD 3-Clause License.<br />
 			<strong>Syntax-Highlighter:</strong> <a href="https://prismjs.com/" target="_blank">Prism</a>, a lightweight, extensible syntax highlighter, released under the MIT License.
 
 		</section>
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tau-prolog@0.2.66/modules/core.min.js"></script>
-
-		<script type="text/javascript">
-
-			  document.addEventListener("DOMContentLoaded", function(event) {
-
-				let programCode = document.getElementById('programcode');
-				let programcontent = document.getElementById('programcontent');
-
-				programCode.parentElement.style.height = programcontent.clientHeight + 'px';
-				
-				function highlight() {
-					programCode.innerHTML = Prism.highlight(programcontent.value, Prism.languages.prolog, 'prolog');
-					programCode.parentElement.style.height = programcontent.clientHeight + 'px';
-				}
-				programcontent.addEventListener("keyup", highlight, false);
-			 });
-		</script>
 
 	</main>
 <?php get_footer(); ?>

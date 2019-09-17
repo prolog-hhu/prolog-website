@@ -9,10 +9,9 @@ https://prismjs.com/download.html#themes=prism-tomorrow&languages=markup+css+cli
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #ccc;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	font-size: 1em;
 	text-align: left;
-	white-space: pre;
+	white-space: pre-wrap;
 	word-spacing: normal;
 	word-break: normal;
 	word-wrap: normal;
@@ -31,6 +30,7 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
+	background: #282c34;
 	padding: 1em;
 	overflow: auto;
 }

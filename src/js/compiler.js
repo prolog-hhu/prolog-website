@@ -9,8 +9,10 @@ class Compiler {
         this.queryHistory = [];
         this.outputHistory = [];
 
+
         // get elements for consulting
         this.programContent = document.getElementById('programcontent');
+        this.programCode = document.getElementById('programcode');
         this.programFile = document.getElementById('programfile');
         this.programConsult = document.getElementById('programconsult');
 
@@ -20,21 +22,47 @@ class Compiler {
 
         this.output = document.getElementById('output');
 
+
         // attach event listeners
+        this.programContent.addEventListener("keyup", this.syncCode.bind(this));
+        this.programContent.addEventListener("scroll", this.syncScroll.bind(this));
+
         this.programFile.addEventListener('change', this.getFile.bind(this));
         this.programConsult.addEventListener("click", this.consult.bind(this));
         this.queryRun.addEventListener("click", this.query.bind(this));
+
+
+        // startup sync code for equal programCode and programContent height
+        this.syncCode();
     }
 
 
-    // consult function
+    syncCode() {
+
+        // copy parsed textarea into code-editor
+        this.programCode.innerHTML = Prism.highlight(this.programContent.value, Prism.languages.prolog, 'prolog');
+
+        // sync height of textarea and code-editor
+        this.programCode.parentElement.style.height = this.programContent.clientHeight + 'px';
+
+        this.syncScroll();
+    }
+
+
+    syncScroll() {
+
+        // sync vertical and horizontal scrolling directions
+        this.programCode.parentElement.scrollTop = this.programContent.scrollTop;
+        this.programCode.parentElement.scrollLeft = this.programContent.scrollLeft;
+    }
+
+
     consult() {
 
-        console.log(this.programContent.value);
+        // save consulting result
         let result = this.session.consult(this.programContent.value);
 
-        console.log(result);
-
+        // decides which type of output it returns
         if (result === true) {
             return this.toOutput('parsing program: success.', 'succ');
         } else {
@@ -46,34 +74,37 @@ class Compiler {
     // query function
     query() {
 
+        // get query content
         let query = this.queryContent.value;
-        console.log(this.queryHistory);
-        console.log(this.outputHistory);
 
+        // decides if it should be queried or not
         if (this.queryHistory[this.queryHistory.length - 1] !== query ||
             this.outputHistory[this.outputHistory.length - 1] === 'false.') {
 
+            // save the query
             let result = this.session.query(query);
 
+            // output error
             if (result.id == "throw") {
                 return this.toOutput(result, 'error');
             };
         }
 
-        let callback = (answer) => {
-
-            let output = pl.format_answer(answer, this.session, )
-
-            this.toOutput(output);
-            this.outputHistory.push(output);
-        };
-
-        this.session.answer(callback);
+        this.session.answer(this.answerCallback.bind(this));
         this.queryHistory.push(query);
     }
 
 
-    // helper: create output
+    answerCallback(answer) {
+
+        let output = pl.format_answer(answer, this.session);
+
+        this.toOutput(output);
+
+        this.outputHistory.push(output);
+    }
+
+
     toOutput(input, type) {
 
         let node = document.createElement("span");
@@ -97,7 +128,7 @@ class Compiler {
         const input = event.target;
 
         if ('files' in input && input.files.length > 0) {
-            this.placeFileContent(this.programContent, input.files[0])
+            this.placeFileContent(this.programContent, input.files[0]);
         }
     }
 
@@ -105,7 +136,13 @@ class Compiler {
     placeFileContent(target, file) {
 
         this.readFileContent(file).then(content => {
-            target.value = content
+
+            // remove white space before and after code
+            let stripped = content.trim();
+
+            target.value = stripped;
+
+            this.syncCode();
         }).catch(error => console.log(error));
     }
 
@@ -121,8 +158,11 @@ class Compiler {
     }
 }
 
-if (typeof pl !== 'undefined') {
+if (typeof pl !== 'undefined' && Prism !== 'undefined') {
     let myCompiler = new Compiler();
+
+} else {
+    throw new Error('Either Tau-Prolog or Prism or both was not loaded.');
 }
 
 export default Compiler;

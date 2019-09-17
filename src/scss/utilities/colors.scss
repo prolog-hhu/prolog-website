@@ -222,3 +222,29 @@ $anmount in $opacity-steps {
     opacity: $anmount;
   }
 }
+
+
+/* Set the caret color to $white */
+.caret-white {
+  caret-color: $white !important;
+}
+
+/* Set the caret color to $black */
+.caret-black {
+  caret-color: $black !important;
+}
+
+/* Set the caret color to $bg-gray-dark */
+.caret-gray-dark {
+  caret-color: $gray-800 !important;
+}
+
+/* Set the caret color to $bg-gray */
+.caret-gray {
+  caret-color: $gray !important;
+}
+
+/* Set the caret color to $bg-gray-light */
+.caret-gray-light {
+  caret-color: $gray-200 !important;
+}
