@@ -23,8 +23,8 @@
                         </h1>
 
                         <span class="d-block mb-3 f3">Registriere dich um die Aufgaben freizuschalten oder schaue dir die Foliensätze direkt hier an.</span>
-                        <a class="btn btn-primary mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/index.php/registrieren/">Zur Registrierung</a>
-                        <a class="btn btn-blue" href="<?php echo get_bloginfo( 'url' ); ?>/index.php/course/prolog-einfhuerung/">Zu den Aufgaben</a>
+                        <a class="btn btn-primary mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/registrieren/">Zur Registrierung</a>
+                        <a class="btn btn-blue" href="<?php echo get_bloginfo( 'url' ); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
                     </article>
                
 

@@ -20,6 +20,10 @@ class Compiler {
         this.queryContent = document.getElementById('querycontent');
         this.queryRun = document.getElementById('queryrun');
 
+        // get elements for verifying
+        this.verifyFile = document.getElementById('querycontent');
+        this.verifyRun = document.getElementById('queryrun');
+
         this.output = document.getElementById('output');
 
 
@@ -58,6 +62,8 @@ class Compiler {
 
 
     consult() {
+
+        console.log(this.session);
 
         // save consulting result
         let result = this.session.consult(this.programContent.value);
@@ -108,12 +114,12 @@ class Compiler {
     toOutput(input, type) {
 
         let node = document.createElement("span");
-        node.className += "d-block mb-2";
+        node.className += "d-block border-left border-gray-light mb-2 p-2";
 
         if (type == 'error') {
-            node.className += ' text-red border border-red p-2';
+            node.className += ' text-red border-red';
         } else if (type == 'succ') {
-            node.className += ' text-green border border-green p-2';
+            node.className += ' text-green border-green';
         }
 
         let text = document.createTextNode(input);

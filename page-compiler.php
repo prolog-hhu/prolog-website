@@ -25,9 +25,9 @@
 			}
 		?>
 
-		<section class="gutter d-flex flex-wrap flex-justify-between flex-items-top flex-content-stretch mb-4">
+		<section class="gutter d-flex flex-wrap flex-justify-between flex-items-top flex-content-stretch mb-6">
 
-			<article class="col-12 col-md-6">
+			<article class="col-12 col-lg-7">
 
 				<label class="d-block mb-1" for="runquery">1. Enter your program:</label>
 				<div class="mb-3 position-relative">
@@ -38,31 +38,43 @@
 						autocorrect="off" 
 						autocapitalize="off" 
 						spellcheck="false"
-						rows="26" ></textarea>
+						rows="24" ></textarea>
 					<pre class="d-block top-0 p-3 m-0"><code id="programcode" lang="prolog" class="language-prolog d-block width-full"></code></pre>
 				</div>
 
 				<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
-						<label>or upload a file:</label> <input name="programfile" id="programfile" type="file" size="50" accept="text/*"> 
+						<label>or upload a file:</label> <input name="programfile" id="programfile" type="file" size="50" accept=".pl,.PL"> 
 						<button class="btn btn-primary" name="programconsult" id="programconsult">Consult</button>
 				</div>
 
 			</article>
 
-			<article class="col-12 col-md-6">
+			<article class="col-12 col-lg-5">
 
 				<div class="mb-3">
 					<label class="d-block mb-1" for="runquery">2. Run a query:</label>
 
 					<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
-						<input class="form-control input-monospace flex-auto width-auto" name="querycontent" id="querycontent" type="text">
-						<button class="btn btn-purple" name="runquery" id="queryrun">run</button>
+						<input class="form-control input-monospace flex-auto width-auto mr-2" name="querycontent" id="querycontent" type="text">
+						<button class="btn btn-blue" name="runquery" id="queryrun">run</button>
 					</div>
 				</div>
 
 				<label class="d-block mb-1" for="output">3. Take a look at the output:</label>
-				<div id="output" class="text-mono height-fit"></div>
+				<div id="output" class="text-mono bg-gray-1 mb-3"></div>
 
+				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts: <span class="text-red">(under construction)<span></label>
+				<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
+						<select id="verifyFile" name="verifyFile" class="form-select flex-auto width-auto mr-2">
+							<option default>choose one.</option>
+							<option>001. Familiendatenbank</option>
+							<option>002. --- TBD ---</option>
+							<option>003. --- TBD ---</option>
+							<option>004. --- TBD ---</option>
+							<option>005. --- TBD ---</option>
+						</select>
+						<button class="btn btn-purple" name="verifyRun" id="verifyRun">verify</button>
+					</div>
 			</article>
 
 		</section>
@@ -72,7 +84,8 @@
 			<h3>Resources:</h3>
 
 			<strong>Prolog-Interpreter:</strong> <a href="http://tau-prolog.org/" target="_blank">Tau Prolog</a>, a Prolog interpreter fully implemented in JavaScript, released under the BSD 3-Clause License.<br />
-			<strong>Syntax-Highlighter:</strong> <a href="https://prismjs.com/" target="_blank">Prism</a>, a lightweight, extensible syntax highlighter, released under the MIT License.
+			<strong>Syntax-Highlighter:</strong> <a href="https://prismjs.com/" target="_blank">Prism</a>, a lightweight, extensible syntax highlighter, released under the MIT License. <br />
+			<strong>Component-Design-System:</strong> <a href="https://primer.style/" target="_blank">Primer</a>, GitHub’s modular design system, released under the MIT License.
 
 		</section>
 

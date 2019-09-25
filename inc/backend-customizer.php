@@ -29,9 +29,9 @@ function remove_menus() {
   // Settings 
   //
   // remove_menu_page( 'options-general.php' );        
-  remove_submenu_page('options-general.php', 'options-writing.php');
+  // remove_submenu_page('options-general.php', 'options-writing.php');
   remove_submenu_page('options-general.php', 'options-discussion.php');
-  remove_submenu_page('options-general.php', 'options-permalink.php');
+  // remove_submenu_page('options-general.php', 'options-permalink.php');
 
   // 
   // Plugin Menu Removal
