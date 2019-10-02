@@ -1,4 +1,4 @@
 import './js/navigation';
-import './js/search';
+import './js/redirects';
 import './js/prism';
 import './js/compiler';

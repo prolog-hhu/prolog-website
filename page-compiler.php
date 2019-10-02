@@ -55,7 +55,7 @@
 					<label class="d-block mb-1" for="runquery">2. Run a query:</label>
 
 					<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
-						<input class="form-control input-monospace flex-auto width-auto mr-2" name="querycontent" id="querycontent" type="text">
+						<input class="form-control input-monospace flex-auto width-auto mr-3" name="querycontent" id="querycontent" type="text">
 						<button class="btn btn-blue" name="runquery" id="queryrun">run</button>
 					</div>
 				</div>
@@ -64,17 +64,25 @@
 				<div id="output" class="text-mono bg-gray-1 mb-3"></div>
 
 				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts: <span class="text-red">(under construction)<span></label>
-				<div class="d-flex flex-wrap flex-justify-between flex-items-middle">
-						<select id="verifyFile" name="verifyFile" class="form-select flex-auto width-auto mr-2">
-							<option default>choose one.</option>
-							<option>001. Familiendatenbank</option>
-							<option>002. --- TBD ---</option>
-							<option>003. --- TBD ---</option>
-							<option>004. --- TBD ---</option>
-							<option>005. --- TBD ---</option>
-						</select>
-						<button class="btn btn-purple" name="verifyRun" id="verifyRun">verify</button>
-					</div>
+				<div class="d-flex flex-wrap flex-justify-between flex-items-middle mb-3">
+					<select id="verifyFile" name="verifyFile" class="form-select flex-auto width-auto mr-3">
+						<option default>choose one.</option>
+						<option>001. Familiendatenbank</option>
+						<option>002. --- TBD ---</option>
+						<option>003. --- TBD ---</option>
+						<option>004. --- TBD ---</option>
+						<option>005. --- TBD ---</option>
+					</select>
+					<button class="btn btn-purple" name="verifyRun" id="verifyRun">verify</button>
+				</div>
+
+				<label class="d-block mb-1" for="verifyFile">5. utilities:</label>
+				<div class="d-flex flex-wrap flex-items-middle">
+					<button class="btn f5 text-normal d-flex px-3" name="resetall" id="resetall">reset all</button>
+					<button class="btn btn-link text-underline f5 text-normal d-flex px-3 mx-3" name="downloadprogram" id="downloadprogram">download program</button>
+					<button class="btn btn-link text-underline f5 text-normal d-flex px-3" name="downloadoutput" id="downloadoutput">download output</button>
+				</div>
+
 			</article>
 
 		</section>
