@@ -65,7 +65,7 @@
                 <?php _e( 'Onlinefolien / Wiki:', 'prlg' ); ?>
             </h2>
 
-            <div class="gutter d-flex flex-wrap flex-justify-between flex-items-center">
+            <div class="gutter d-flex flex-wrap flex-justify-between">
                 <?php
                     $loop = new WP_Query( array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name') );
 
@@ -73,10 +73,13 @@
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
 
                             <div class="col-12 col-md-6 mb-5">
-                                <article class="p-4 border border-gray-light">
-                                    <h3 class="h2 mb-2"><?php echo get_the_title(); ?></h3>
-                                    <?php the_excerpt(); ?>
-
+                                <article class="collapse p-4 border border-gray-light">
+                                    <div class="header">
+                                        <h3 class="h2 mb-2"><?php echo get_the_title(); ?></h3>
+                                    </div>
+                                    <div class="content">
+                                        <?php the_excerpt(); ?>
+                                    </div>
                                     <a class="btn" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">> Weiterlesen</a>
                                 </article>
                             </div>

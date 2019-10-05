@@ -65,20 +65,20 @@
 
 				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts: <span class="text-red">(under construction)<span></label>
 				<div class="d-flex flex-wrap flex-justify-between flex-items-middle mb-3">
-					<select id="verifyFile" name="verifyFile" class="form-select flex-auto width-auto mr-3">
+					<select id="verifyfile" name="verifyfile" class="form-select flex-auto width-auto mr-3">
 						<option default>choose one.</option>
-						<option>001. Familiendatenbank</option>
+						<option value="001">001. Familiendatenbank</option>
 						<option>002. --- TBD ---</option>
 						<option>003. --- TBD ---</option>
 						<option>004. --- TBD ---</option>
 						<option>005. --- TBD ---</option>
 					</select>
-					<button class="btn btn-purple" name="verifyRun" id="verifyRun">verify</button>
+					<button class="btn btn-purple" name="verifyrun" id="verifyrun">verify</button>
 				</div>
 
 				<label class="d-block mb-1" for="verifyFile">5. utilities:</label>
 				<div class="d-flex flex-wrap flex-items-middle">
-					<button class="btn f5 text-normal d-flex px-3" name="resetall" id="resetall">reset all</button>
+					<button class="btn f5 text-normal d-flex px-3" name="reset" id="reset">reset</button>
 					<button class="btn btn-link text-underline f5 text-normal d-flex px-3 mx-3" name="downloadprogram" id="downloadprogram">download program</button>
 					<button class="btn btn-link text-underline f5 text-normal d-flex px-3" name="downloadoutput" id="downloadoutput">download output</button>
 				</div>
@@ -96,6 +96,12 @@
 			<strong>Component-Design-System:</strong> <a href="https://primer.style/" target="_blank">Primer</a>, GitHub’s modular design system, released under the MIT License.
 
 		</section>
+
+		<script id="defaults.pl" type="text/prolog">
+			% not\1
+			% implements shorthand not
+			not(EXPR) :- EXPR \= true.
+		</script>
 
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tau-prolog@0.2.66/modules/core.min.js"></script>
 
