@@ -2,7 +2,6 @@ import FileUpload from './_FileUpload';
 import UserOutput from './_UserOutput';
 import FileDownload from './_FileDownload';
 
-import test01 from './tests/01';
 
 class Compiler {
 
@@ -168,20 +167,23 @@ class Compiler {
 
     verify() {
 
-        if (this.verifyFile.value !== '001') {
+        if (this.verifyFile.value === '000') {
             return null;
+
+        } else {
+
+            let testsRaw = this.verifyFile.options[this.verifyFile.selectedIndex].dataset.tests;
+            let testsParsed = JSON.parse(testsRaw);
+
+            testsParsed.forEach((elem, index) => {
+
+                this.UserOutput.add('Test ' + index + '.: ' + elem.Beschreibung, 'test');
+
+                let results = this.query(elem.query);
+                this.UserOutput.write(results);
+            });
+
         }
-
-        let tests = test01;
-
-        tests.forEach((elem, index) => {
-
-            this.UserOutput.add('Test ' + index + '.: ' + elem.name, 'test');
-
-            let results = this.query(elem.query);
-            this.UserOutput.write(results);
-        });
-
     }
 
 

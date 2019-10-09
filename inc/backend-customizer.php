@@ -98,4 +98,9 @@ function change_login_logo_url() {
 }
 add_filter( 'login_headerurl', 'change_login_logo_url' );
 
+
+// FIXME
+add_filter( 'sensei_question_show_answers', '__return_true' );
+add_filter( 'sensei_question_answer_message_text', '__return_empty_string' );
+
 ?>

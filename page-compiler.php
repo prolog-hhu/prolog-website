@@ -8,6 +8,26 @@
  * @since 1.0.0
  */
 
+
+ $testsuites = [];
+
+ $testsuitepages = get_posts(array(
+	'numberposts' => -1,
+	'post_type' => 'testsuites'
+));
+
+if($testsuitepages)
+{
+	foreach($testsuitepages as $page)
+	{
+		array_push($testsuites, array(
+			'id' => $page->ID,
+			'title' => get_the_title($page->ID),
+			'tests' => get_field('test', $page->ID)
+		));
+	}
+}
+
 ?>
 
 <?php get_header(); ?>
@@ -63,15 +83,16 @@
 				<label class="d-block mb-1" for="output">3. Take a look at the output:</label>
 				<div id="output" class="text-mono bg-gray-1 mb-3"></div>
 
-				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts: <span class="text-red">(under construction)<span></label>
+				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts:</label>
 				<div class="d-flex flex-wrap flex-justify-between flex-items-middle mb-3">
 					<select id="verifyfile" name="verifyfile" class="form-select flex-auto width-auto mr-3">
-						<option default>choose one.</option>
-						<option value="001">001. Familiendatenbank</option>
-						<option>002. --- TBD ---</option>
-						<option>003. --- TBD ---</option>
-						<option>004. --- TBD ---</option>
-						<option>005. --- TBD ---</option>
+						<option value="000" default>choose one.</option>
+
+						<?php 
+							foreach($testsuites as $suite) { ?>
+								<option value="<?php echo $suite['id'] ?>" data-tests="<?php echo htmlspecialchars(json_encode($suite['tests']), ENT_QUOTES, 'UTF-8') ?>"><?php echo $suite['title'] ?></option>
+						<?php } ?>
+
 					</select>
 					<button class="btn btn-purple" name="verifyrun" id="verifyrun">verify</button>
 				</div>

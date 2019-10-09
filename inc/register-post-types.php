@@ -51,4 +51,50 @@ function wiki_init() {
 	register_post_type( 'wiki', $args );
 }
 
+
+add_action( 'init', 'testsuites_init' );
+/**
+ * Register a book post type.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_post_type
+ */
+function testsuites_init() {
+	$labels = array(
+		'name'               => _x( 'Testsuites', 'prlg' ),
+		'singular_name'      => _x( 'Testsuite', 'prlg' ),
+		'menu_name'          => _x( 'Testsuites', 'prlg' ),
+		'name_admin_bar'     => _x( 'Testsuites', 'prlg' ),
+		'add_new'            => _x( 'Neue Testsuite', 'prlg' ),
+		'add_new_item'       => __( 'Neue Testsuite hinzufügen', 'prlg' ),
+		'new_item'           => __( 'Neue Testsuite', 'prlg' ),
+		'edit_item'          => __( 'Testsuite bearbeiten', 'prlg' ),
+		'view_item'          => __( 'Testsuites anzeigen', 'prlg' ),
+		'all_items'          => __( 'Alle Testsuites', 'prlg' ),
+		'search_items'       => __( 'Suche Testsuites', 'prlg' ),
+		'parent_item_colon'  => __( 'Testsuite:', 'prlg' ),
+		'not_found'          => __( 'Keine Testsuite gefunden.', 'prlg' ),
+		'not_found_in_trash' => __( 'Keine Testsuite im Papierkorb gefunden.', 'prlg' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Beschreibung.', 'prlg' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'testsuite' ),
+		'capability_type'    => 'page',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 20,
+		'menu_icon'          => 'dashicons-editor-code',
+		'show_in_rest' 	     => true,
+		'supports'           => array( 'title', 'author' )
+	);
+
+	register_post_type( 'testsuites', $args );
+}
+
 ?>
