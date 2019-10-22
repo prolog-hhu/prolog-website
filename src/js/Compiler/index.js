@@ -220,7 +220,7 @@ if (typeof pl !== 'undefined' && Prism !== 'undefined') {
     let myCompiler = new Compiler();
 
 } else {
-    console.log('no compiler action here, sorry bro.')
+    console.log('No Compiler here.')
 }
 
 export default Compiler;

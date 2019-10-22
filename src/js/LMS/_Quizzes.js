@@ -3,13 +3,13 @@ class Quizzes {
     constructor() {
 
         this.quiz = document.getElementById('sensei-quiz-list');
-        this.questions = this.quiz.children;
 
-        if (this.quiz === undefined) {
+        if (this.quiz === null) {
             console.log('No Quiz here.')
             return;
         }
 
+        this.questions = this.quiz.children;
         this.initializeQuestions();
     }
 
@@ -25,8 +25,6 @@ class Quizzes {
 class Question {
 
     constructor(elem) {
-
-        console.log(elem);
 
         this.question = elem;
         this.answer = this.question.getElementsByClassName('answer_message')[0];
@@ -71,7 +69,5 @@ class Question {
     }
 
 }
-
-new Quizzes();
 
 export default Quizzes;
