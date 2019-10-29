@@ -40,7 +40,7 @@ class Navigation {
     createFader() {
         let fader = document.createElement("div");
         fader.id = "fader";
-        fader.className = "top-0 left-0 position-fixed width-full height-stretch bg-black opacity-80";
+        fader.className = "top-0 left-0 position-fixed width-full height-full bg-gray-dark";
 
         return fader;
     }

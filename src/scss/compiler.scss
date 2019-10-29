@@ -1,0 +1,14 @@
+#programcontent {
+    color: transparent;
+    background-color: transparent;
+    caret-color: $gray-200 !important;
+
+    resize: none;
+    width: 100%;
+}
+
+
+#output {
+    height: 26rem;
+    overflow-y: auto;
+}

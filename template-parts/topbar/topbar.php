@@ -10,7 +10,7 @@
 
 ?>
 
-<header id="topbar" class="py-2 bg-gray-light">
+<header id="topbar" class="py-2 bg-gray-dark text-white">
     <div class="container-xl px-3">
         <div class="d-flex flex-justify-between flex-items-center">
 

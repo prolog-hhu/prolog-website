@@ -54,7 +54,7 @@ if($testsuitepages)
 					<textarea 
 						name="programcontent" 
 						id="programcontent"
-						class="form-control text-mono position-absolute top-0 text-transparent bg-transparent border-0 caret-gray-light p-3 lh-default resize-none"
+						class="form-control text-mono position-absolute top-0 border-0 p-3 lh-default"
 						autocorrect="off" 
 						autocapitalize="off" 
 						spellcheck="false"
@@ -81,7 +81,7 @@ if($testsuitepages)
 				</div>
 
 				<label class="d-block mb-1" for="output">3. Take a look at the output:</label>
-				<div id="output" class="text-mono bg-gray-1 mb-3"></div>
+				<div id="output" class="text-mono bg-gray mb-3"></div>
 
 				<label class="d-block mb-1" for="verifyFile">4. Verify it with one of our test scripts:</label>
 				<div class="d-flex flex-wrap flex-justify-between flex-items-middle mb-3">
@@ -108,7 +108,7 @@ if($testsuitepages)
 
 		</section>
 
-		<section class="p-3 bg-gray-light">
+		<section class="p-3 bg-gray">
 
 			<h3>Resources:</h3>
 

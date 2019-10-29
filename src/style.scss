@@ -4,23 +4,22 @@
 // Should you need specific files, you can easily use separate `@import`s.
 
 // Global requirements
-@import "scss/variables/index.scss";
-@import "scss/mixins/index.scss";
 
 // Modules
-@import "scss/base/index.scss";
-@import "scss/layout/index.scss";
-@import "scss/navigation/index.scss";
+@import "@primer/css/base/index.scss";
+@import "@primer/css/support/index.scss";
+@import "@primer/css/layout/index.scss";
 
-@import "scss/forms/index.scss";
-@import "scss/button/index.scss";
+@import "@primer/css/forms/index.scss";
+@import "@primer/css/buttons/index.scss";
+@import "@primer/css/marketing/index.scss";
 
-@import "scss/compiler-page.scss";
-@import "scss/front-page.scss";
+@import '@primer/css/utilities/index.scss';
 
-// Plugins
+
+@import "scss/navigation.scss";
+@import "scss/gutenberg.scss";
+@import "scss/compiler.scss";
+
+
 @import "scss/plugins/index.scss";
-
-
-// Utility (overrides)
-@import "scss/utilities/index.scss";

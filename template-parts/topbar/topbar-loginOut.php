@@ -12,9 +12,9 @@
 
 <?php if ( is_user_logged_in() ) { ?>
 
-    <a class="muted-link border border-gray-dark rounded-1 px-2 py-1 ml-2 ml-md-3" href="<?php echo wp_logout_url(); ?>">Logout</a>
+    <a class="text-white border border-gray-dark rounded-1 px-2 py-1 ml-2 ml-md-3" href="<?php echo wp_logout_url(); ?>">Logout</a>
 
 <?php } else { ?>
 
-    <a class="muted-link border border-gray-dark rounded-1 px-2 py-1 ml-2 ml-md-3" href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
+    <a class="text-white border border-gray-dark rounded-1 px-2 py-1 ml-2 ml-md-3" href="<?php echo wp_login_url(); ?>" title="Login">Login</a>
 <?php } ?>

@@ -4,6 +4,9 @@
 
     display: none;
 
+    min-height: 100% !important;
+    height: auto !important;
+
     &.active {
         display: block;
     }
@@ -21,4 +24,8 @@
     li a {
         color: inherit;
     }
+}
+
+#fader {
+    opacity: .8;
 }
