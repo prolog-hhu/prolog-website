@@ -25,12 +25,12 @@
                         <span class="d-block mb-3 f3">Registriere dich um die Aufgaben freizuschalten, schaue dir die Foliensätze an oder nutze den Compiler zur Überprüfung deiner Lösung.</span>
 
                         <?php if ( !is_user_logged_in() ) { ?>
-                            <a class="btn btn-primary mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/registrieren/">Zur Registrierung</a>
+                            <a class="btn btn-primary mb-2 mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/registrieren/">Zur Registrierung</a>
                         <?php } ?>
                         
-                        <a class="btn btn-blue mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
+                        <a class="btn btn-blue mb-2 mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
 
-                         <a class="btn btn-outline" href="<?php echo get_bloginfo( 'url' ); ?>/compiler/">Zum Compiler</a>
+                         <a class="btn btn-outline mb-2" href="<?php echo get_bloginfo( 'url' ); ?>/compiler/">Zum Compiler</a>
                     </article>
                
         </section>
@@ -47,7 +47,7 @@
 
             <div class="gutter d-flex flex-wrap flex-justify-between">
                 <?php
-                    $loop = new WP_Query( array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name') );
+                    $loop = new WP_Query( array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1) );
 
                     if ( $loop->have_posts() ) :
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
@@ -59,7 +59,13 @@
                                     </div>
                                     <div class="content mt-3">
                                         <?php the_excerpt(); ?>
-                                        <a class="btn btn-primary btn-sm mt-2" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">> Weiterlesen</a>
+                                        <a class="btn btn-primary btn-sm mt-2" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Weiterlesen</a>
+
+                                        <a class="btn btn-outline btn-sm mt-2" href="<?php the_field('pdf_folien'); ?>" target="_blank">Folien ansehen</a>
+
+                                        <?php if(get_field('musterlosung') != ''): ?>
+                                            <a class="btn btn-invisible btn-sm mt-2" href="<?php the_field('musterlosung'); ?>" target="_blank">Musterlösung herunterladen</a>
+                                        <?php endif; ?>
                                     </div>
                                 </article>
                             </div>
