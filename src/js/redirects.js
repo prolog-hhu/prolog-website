@@ -13,4 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         location = location.replace(/register/, 'registrieren');
         window.location.href = location;
     };
+
+    if (location.match(/folien-uebersicht/)) {
+
+        location = location.replace(/folien-uebersicht\//, '');
+        window.location.href = location;
+    };
 });
