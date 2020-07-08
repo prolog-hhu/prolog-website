@@ -31,7 +31,7 @@
 
 						<a class="btn btn-outline mb-3 mr-3" href="<?php the_field('pdf_folien') ?>" target="_blank">Folien ansehen</a>
 
-						<?php if(get_field('musterlosung') != ''): ?>
+						<?php if(get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == TRUE): ?>
 							<a class="btn btn-invisible mb-3 mr-3" href="<?php the_field('musterlosung') ?>">Musterlösungen herunterladen</a>
 						<?php endif; ?>
 					</div>

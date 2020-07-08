@@ -63,7 +63,7 @@
 
                                         <a class="btn btn-outline btn-sm mt-2" href="<?php the_field('pdf_folien'); ?>" target="_blank">Folien ansehen</a>
 
-                                        <?php if(get_field('musterlosung') != ''): ?>
+                                        <?php if(get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == TRUE): ?>
                                             <a class="btn btn-invisible btn-sm mt-2" href="<?php the_field('musterlosung'); ?>" target="_blank">Musterlösung herunterladen</a>
                                         <?php endif; ?>
                                     </div>
