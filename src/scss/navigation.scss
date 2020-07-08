@@ -1,31 +1,37 @@
 #navigation {
+  z-index: 999;
 
-    z-index: 999;
+  display: none;
 
-    display: none;
+  min-height: 100% !important;
+  height: auto !important;
 
-    min-height: 100% !important;
-    height: auto !important;
+  &.active {
+    display: block;
+  }
 
-    &.active {
-        display: block;
-    }
+  li a {
+    color: inherit;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
 
-    li a {
-        color: inherit;
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
+.admin-bar #navigation {
+  top: 48px !important;
+
+  @include breakpoint(md) {
+    top: 32px !important;
+  }
 }
 
 #colophon {
-
-    li a {
-        color: inherit;
-    }
+  li a {
+    color: inherit;
+  }
 }
 
 #fader {
-    opacity: .8;
+  opacity: 0.8;
 }

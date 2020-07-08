@@ -11,7 +11,7 @@
 ?>
 
  <header id="navigation"
-     class="col-10 col-md-7 col-lg-6 col-xl-4 position-absolute top-0 right-0 bg-gray box-shadow-large">
+     class="col-10 col-md-7 col-lg-6 col-xl-4 position-absolute position-md-fixed top-0 right-0 bg-gray box-shadow-large">
 
      <div class="d-flex flex-justify-between flex-items-center bg-gray border-bottom border-white-fade-50">
         <span class="f2 text-bold px-3">Navigation</span>
