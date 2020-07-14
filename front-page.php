@@ -30,7 +30,7 @@
                         
                         <a class="btn btn-blue mb-2 mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
 
-                         <a class="btn btn-outline mb-2" href="<?php echo get_bloginfo( 'url' ); ?>/compiler/">Zum Compiler</a>
+                         <a class="btn btn-outline mb-2" target="_blank" href="https://swish.phil.hhu.de/">Zur SWISH Umgebung</a>
                     </article>
                
         </section>
