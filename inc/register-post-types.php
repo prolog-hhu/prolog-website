@@ -95,7 +95,7 @@ function quizzes_init() {
 		'rewrite'            => array( 'slug' => 'quiz' ),
 		'capability_type'    => 'page',
 		'has_archive'        => true,
-		'hierarchical'       => false,
+		'hierarchical'       => true,
 		'menu_position'      => 20,
 		'menu_icon'          => 'dashicons-lightbulb',
 		'show_in_rest' 	     => true,
