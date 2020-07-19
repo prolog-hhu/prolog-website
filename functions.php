@@ -4,6 +4,7 @@ include('inc/head-cleanup.php');
 include('inc/class-modifier.php');
 include('inc/register-post-types.php');
 include('inc/backend-customizer.php');
+include('inc/plugin-customizer.php');
 
 /**
  * Theme assets
