@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Retrieve support languages
  * @return array Hash of lang => language
@@ -29,3 +29,4 @@ function cl_prolog_get_supported_languages() {
 	 */
 	return apply_filters( 'mkaz_code_syntax_language_list', $languages );
 }
+?>
