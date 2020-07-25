@@ -14,7 +14,7 @@ $return = get_sub_field('return');
         <input 
             class="answer"
             type="checkbox" 
-            <?php echo $correct ? "correct" : "" ?>
+            <?php echo $correct ? "correct" : "incorrect" ?>
         >
         <em class="highlight">
             <?php echo $content ?>
