@@ -24,6 +24,6 @@ $question = get_sub_field('question');
 
     <button type="submit" class="btn btn-primary">Überprüfen</button>
 
-    <span class="return flash hidden"></span>
-
+    <div class="return flash mt-2" hidden></div>
+   
 </form>
