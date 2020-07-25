@@ -9,17 +9,16 @@ $return = get_sub_field('return');
 
 ?>
 
-<div class="form-checkbox">
+<div class="answer form-group form-checkbox">
     <label>
         <input 
-            class="answer"
             type="checkbox" 
             <?php echo $correct ? "correct" : "incorrect" ?>
         >
         <em class="highlight">
             <?php echo $content ?>
         </em>
-        <span class="error" id="form-error-text">
+        <span class="error position-relative">
             <?php echo $return ?>
         </span>
     </label>
