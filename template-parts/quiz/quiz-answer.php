@@ -19,7 +19,7 @@ $return = get_sub_field('return');
             <?php echo $content ?>
         </em>
         <?php if (!empty($return)) { ?>
-        <span class="error position-relative">
+        <span class="error position-relative width-fit">
             <?php echo $return ?>
         </span>
         <?php } ?>
