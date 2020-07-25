@@ -18,8 +18,10 @@ $return = get_sub_field('return');
         <em class="highlight">
             <?php echo $content ?>
         </em>
+        <?php if (!empty($return)) { ?>
         <span class="error position-relative">
             <?php echo $return ?>
         </span>
+        <?php } ?>
     </label>
 </div>
