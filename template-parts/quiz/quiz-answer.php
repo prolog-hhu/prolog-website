@@ -12,6 +12,7 @@ $return = get_sub_field('return');
 <div class="form-checkbox">
     <label>
         <input 
+            class="answer"
             type="checkbox" 
             <?php echo $correct ? "correct" : "" ?>
         >
