@@ -6,9 +6,9 @@
 
 <div class="gutter d-flex flex-wrap flex-justify-center flex-items-center">
     <a href="#" class="btn btn-blue mr-2">
-        > Zur nächsten Aufgabe
+        > Nächste Aufgabe
     </a>
     <a href="#" class="btn btn-grey">
-        >> Zum nächsten Kapitel
+        >> Nächstes Kapitel
     </a>
 </div>
