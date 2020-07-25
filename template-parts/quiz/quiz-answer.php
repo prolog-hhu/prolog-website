@@ -19,5 +19,8 @@ $return = get_sub_field('return');
         <em class="highlight">
             <?php echo $content ?>
         </em>
+        <span class="error" id="form-error-text">
+            <?php echo $return ?>
+        </span>
     </label>
 </div>
