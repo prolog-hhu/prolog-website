@@ -16,3 +16,6 @@
 
 # lock files
 *.lock
+
+# MAC OS temporary
+.DS_Store
