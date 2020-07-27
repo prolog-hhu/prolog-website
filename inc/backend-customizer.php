@@ -77,6 +77,10 @@ function change_login_logo() { ?>
 
     <style type="text/css">
 
+        #login {
+          padding: 4% 0 0 0!important;
+        }
+
         #login h1 a, .login h1 a {
           background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/media/branding.svg);
           height: 320px;
