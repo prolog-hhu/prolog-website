@@ -19,16 +19,16 @@
         
                     <article class="col-12 col-md-9 my-6">
                         <h1 class="h0-mktg mb-3">
-                            Willkommen auf dem begleitenden eLearning Portal des <a target="_blank" href="https://user.phil.hhu.de/~petersen/WiSe1718_Prolog/WiSe1718_Prolog.html">Grundkurs Prolog</a>
+                            Willkommen auf dem begleitenden eLearning Portal des <a target="_blank" title="Wiebke Petersens Kurswebseite besuchen" href="https://user.phil.hhu.de/~petersen/WiSe1718_Prolog/WiSe1718_Prolog.html">Grundkurs Prolog</a>
                         </h1>
 
                         <span class="d-block mb-3 f3">Registriere dich um die Aufgaben freizuschalten, schaue dir die Foliensätze an oder nutze den Compiler zur Überprüfung deiner Lösung.</span>
 
-                        <?php if ( !is_user_logged_in() ) { ?>
-                            <a class="btn btn-primary mb-2 mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/registrieren/">Zur Registrierung</a>
+                        <?php if (!is_user_logged_in()) { ?>
+                            <a class="btn btn-primary mb-2 mr-1" href="<?php echo get_bloginfo('url'); ?>/registrieren/">Zur Registrierung</a>
                         <?php } ?>
                         
-                        <a class="btn btn-blue mb-2 mr-1" href="<?php echo get_bloginfo( 'url' ); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
+                        <a class="btn btn-blue mb-2 mr-1" href="<?php echo get_bloginfo('url'); ?>/course/prolog-einfhuerung/">Zu den Aufgaben</a>
 
                          <a class="btn btn-outline mb-2" target="_blank" href="https://swish.phil.hhu.de/">Zur SWISH Umgebung</a>
                     </article>
@@ -42,15 +42,15 @@
         <section>
 
             <h2 class="h0-mktg mb-4 text-center">
-                <?php _e( 'Onlinefolien / Wiki:', 'prlg' ); ?>
+                <?php _e('Onlinefolien / Wiki:', 'prlg'); ?>
             </h2>
 
             <div class="gutter d-flex flex-wrap flex-justify-between">
                 <?php
-                    $loop = new WP_Query( array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1) );
+                    $loop = new WP_Query(array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
 
-                    if ( $loop->have_posts() ) :
-                        while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                    if ($loop->have_posts()) :
+                        while ($loop->have_posts()) : $loop->the_post(); ?>
 
                             <div class="col-12 col-md-6 mb-5">
                                 <article class="collapse py-3 px-4 border border-gray-light">
@@ -63,7 +63,7 @@
 
                                         <a class="btn btn-outline btn-sm mt-2" href="<?php the_field('pdf_folien'); ?>" target="_blank">Folien ansehen</a>
 
-                                        <?php if(get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == TRUE): ?>
+                                        <?php if (get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == true): ?>
                                             <a class="btn btn-invisible btn-sm mt-2" href="<?php the_field('musterlosung'); ?>" target="_blank">Musterlösung herunterladen</a>
                                         <?php endif; ?>
                                     </div>
