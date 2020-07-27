@@ -78,7 +78,7 @@ function change_login_logo() { ?>
     <style type="text/css">
 
         #login {
-          padding: 4% 0 0 0!important;
+          padding: 4% 0 0 0;
         }
 
         #login h1 a, .login h1 a {
