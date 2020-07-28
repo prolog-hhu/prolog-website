@@ -12,20 +12,18 @@
  $testsuites = [];
 
  $testsuitepages = get_posts(array(
-	'numberposts' => -1,
-	'post_type' => 'testsuites'
+    'numberposts' => -1,
+    'post_type' => 'testsuites'
 ));
 
-if($testsuitepages)
-{
-	foreach($testsuitepages as $page)
-	{
-		array_push($testsuites, array(
-			'id' => $page->ID,
-			'title' => get_the_title($page->ID),
-			'tests' => get_field('test', $page->ID)
-		));
-	}
+if ($testsuitepages) {
+    foreach ($testsuitepages as $page) {
+        array_push($testsuites, array(
+            'id' => $page->ID,
+            'title' => get_the_title($page->ID),
+            'tests' => get_field('test', $page->ID)
+        ));
+    }
 }
 
 ?>
@@ -35,15 +33,15 @@ if($testsuitepages)
 	<main class="container-xl px-3 py-6">
 
 		<?php // get post content
-			if ( have_posts() ) {
-				// Load posts loop.
-				while ( have_posts() ) {
-					the_post();
-					
-					get_template_part( 'template-parts/content/content' );
-				}
-			}
-		?>
+            if (have_posts()) {
+                // Load posts loop.
+                while (have_posts()) {
+                    the_post();
+                    
+                    get_template_part('template-parts/content/content');
+                }
+            }
+        ?>
 
 		<section class="gutter d-flex flex-wrap flex-justify-between flex-items-top flex-content-stretch mb-6">
 
@@ -88,8 +86,8 @@ if($testsuitepages)
 					<select id="verifyfile" name="verifyfile" class="form-select flex-auto width-auto mr-3">
 						<option value="000" default>choose one.</option>
 
-						<?php 
-							foreach($testsuites as $suite) { ?>
+						<?php
+                            foreach ($testsuites as $suite) { ?>
 								<option value="<?php echo $suite['id'] ?>" data-tests="<?php echo htmlspecialchars(json_encode($suite['tests']), ENT_QUOTES, 'UTF-8') ?>"><?php echo $suite['title'] ?></option>
 						<?php } ?>
 
