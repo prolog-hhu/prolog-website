@@ -10,16 +10,16 @@
   "author": "Simon Münker",
   "license": "MIT",
   "dependencies": {
-    "@primer/css": "^13.2.0",
+    "@primer/css": "^15.0.0",
     "jquery": "^3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
-    "assets-webpack-plugin": "^3.9.12",
+    "assets-webpack-plugin": "^5.0.3",
     "autoprefixer": "^9.8.4",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.26.12",
     "browser-sync-webpack-plugin": "^2.2.0",
     "clean-webpack-plugin": "^1.0.0",
     "cross-env": "^5.2.1",
