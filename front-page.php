@@ -35,7 +35,7 @@
 
         <section>
 
-            <h2 class="h0-mktg mb-4 text-center">
+            <h2 id="wiki" class="h0-mktg mb-4 text-center">
                 <?php _e('Onlinefolien / Wiki:', 'prlg'); ?>
             </h2>
 
