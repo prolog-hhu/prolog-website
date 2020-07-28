@@ -1,6 +1,13 @@
 <?php
 
-# Quiz Navigation logic goes here
+/**
+ * Template part for displaying the quiz navigation
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @since 2.0.0
+ */
 
 ?>
 

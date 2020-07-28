@@ -1,4 +1,12 @@
 <?php
+/**
+ * Template part for displaying a single quiz
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @since 2.0.0
+ */
 
 # get and save quiz content
 the_row();

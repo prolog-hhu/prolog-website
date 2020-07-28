@@ -1,4 +1,12 @@
 <?php
+/**
+ * Template part for displaying a single answer
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package WordPress
+ * @since 2.0.0
+ */
 
 # get row content, save data
 the_row();
