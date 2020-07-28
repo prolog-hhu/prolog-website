@@ -92,14 +92,14 @@ if ($testsuitepages) {
 						<?php } ?>
 
 					</select>
-					<button class="btn btn-purple" name="verifyrun" id="verifyrun">verify</button>
+					<button class="btn btn-outline" name="verifyrun" id="verifyrun">verify</button>
 				</div>
 
 				<label class="d-block mb-1" for="verifyFile">5. utilities:</label>
-				<div class="d-flex flex-wrap flex-items-middle">
-					<button class="btn f5 text-normal d-flex px-3" name="reset" id="reset">reset</button>
-					<button class="btn btn-link text-underline f5 text-normal d-flex px-3 mx-3" name="downloadprogram" id="downloadprogram">download program</button>
-					<button class="btn btn-link text-underline f5 text-normal d-flex px-3" name="downloadoutput" id="downloadoutput">download output</button>
+				<div class="BtnGroup">
+					<button class="btn BtnGroup-item btn-sm btn-danger" name="reset" id="reset">reset</button>
+					<button class="btn BtnGroup-item btn-sm" name="downloadprogram" id="downloadprogram">download program</button>
+					<button class="btn BtnGroup-item btn-sm" name="downloadoutput" id="downloadoutput">download output</button>
 				</div>
 
 			</article>
