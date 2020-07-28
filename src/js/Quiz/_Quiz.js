@@ -44,10 +44,12 @@ class Quiz {
     this.return.removeAttribute("hidden");
     // quiz success
     if (result === true) {
+      this.return.classList.remove("flash-error");
       this.return.classList.add("flash-success");
       this.return.innerHTML = "Super, alles richtig!";
     } // quiz failed
     else if (result === false) {
+      this.return.classList.remove("flash-success");
       this.return.classList.add("flash-error");
       this.return.innerHTML =
         "Leider nicht richtig! Schaue dir bitte die Rückmeldung an.";
