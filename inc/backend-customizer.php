@@ -48,7 +48,7 @@ add_action('admin_menu', 'remove_menus');
 function register_menus()
 {
 
-  // add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
+    // add_menu_page( $page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position );
     add_menu_page('Menüs', 'Menüs', 'manage_options', 'nav-menus.php', '', 'dashicons-screenoptions', 60);
     // add_menu_page( 'Widgets', 'Widgets', 'manage_options', 'widgets.php', '', 'dashicons-move', 20 );
 }
@@ -108,5 +108,3 @@ add_filter('login_headerurl', 'change_login_logo_url');
 // FIXME
 add_filter('sensei_question_show_answers', '__return_true');
 add_filter('sensei_question_answer_message_text', '__return_empty_string');
-
-?>

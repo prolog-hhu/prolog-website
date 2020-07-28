@@ -6,12 +6,13 @@
  * @since 1.0.0
  */
 
-
-#
-#
-# Register: Wiki
-#
+/**
+ *
+ * Register: Wiki
+ *
+ */
 add_action('init', 'wiki_init');
+
 /**
  * Register a book post type.
  *
@@ -57,11 +58,15 @@ function wiki_init()
     register_post_type('wiki', $args);
 }
 
-#
-#
-# Register: Lektionen
-#
+/******************************************************************************/
+
+/**
+ *
+ * Register: Lektionen
+ *
+ */
 add_action('init', 'lektionen_init');
+
 /**
  * Register a book post type.
  *
@@ -107,11 +112,15 @@ function lektionen_init()
     register_post_type('lektionen', $args);
 }
 
-#
-#
-# Register: Quizzes
-#
+/******************************************************************************/
+
+/**
+ *
+ * Register: Quizzes
+ *
+ */
 add_action('init', 'quizzes_init');
+
 /**
  * Register a book post type.
  *
@@ -157,11 +166,15 @@ function quizzes_init()
     register_post_type('quizzes', $args);
 }
 
-#
-#
-# Register: Testsuites
-#
+/******************************************************************************/
+
+/**
+ *
+ * Register: Testsuites
+ *
+ */
 add_action('init', 'testsuites_init');
+
 /**
  * Register a book post type.
  *
