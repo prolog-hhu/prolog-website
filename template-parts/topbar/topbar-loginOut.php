@@ -9,7 +9,7 @@
  */
 
 
-$classes = "text-white border border-gray-dark rounded-1 px-2 py-1 ml-2 ml-md-3 hide-sm"
+$classes = "text-white border border-gray-dark rounded-2 px-2 py-1 ml-2 ml-md-3 hide-sm"
 
 ?>
 
