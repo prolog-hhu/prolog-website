@@ -10,11 +10,10 @@ include('inc/plugin-customizer.php');
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-
     $manifest = json_decode(file_get_contents('build/assets.json', true));
     $main = $manifest->main;
     
-    wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css,  false, null);
+    wp_enqueue_style('theme-css', get_template_directory_uri() . "/build/" . $main->css, false, null);
     wp_enqueue_script('theme-js', get_template_directory_uri() . "/build/" . $main->js, ['jquery'], null, true);
 }, 100);
 
@@ -58,27 +57,29 @@ add_action('after_setup_theme', function () {
     // add_theme_support('customize-selective-refresh-widgets');
 
     // Add support for Block Styles.
-    add_theme_support( 'wp-block-styles' );
+    add_theme_support('wp-block-styles');
 
     // Add support for full and wide align images.
-    add_theme_support( 'align-wide' );
+    add_theme_support('align-wide');
 
     // Add support for editor styles.
-    add_theme_support( 'editor-styles' );
+    add_theme_support('editor-styles');
 
     // Enqueue editor styles.
-    add_editor_style( 'style-editor.css' );
-
+    add_editor_style('style-editor.css');
 }, 20);
 
 
 add_action('rest_api_init', function () {
-	$namespace = 'presspack/v1';
-	register_rest_route( $namespace, '/path/(?P<url>.*?)', array(
-		'methods'  => 'GET',
-		'callback' => 'get_post_for_url',
-	));
+    $namespace = 'presspack/v1';
+    register_rest_route($namespace, '/path/(?P<url>.*?)', array(
+        'methods'  => 'GET',
+        'callback' => 'get_post_for_url',
+    ));
 });
+
+/* Flush rewrite rules for custom post types. */
+add_action('after_switch_theme', 'flush_rewrite_rules');
 
 /**
 * This fixes the wordpress rest-api so we can just lookup pages by their full
@@ -95,5 +96,3 @@ function get_post_for_url($data)
     $request->set_url_params(array('id' => $postId));
     return $controller->get_item($request);
 }
-
-?>
