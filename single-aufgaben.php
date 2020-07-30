@@ -27,12 +27,12 @@
 
 				<div class="gutter d-flex flex-wrap flex-justify-center mb-4">
 
-					<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<div class="col-12 col-md-8 mb-4 mb-md-0">
 						<?php the_content(); ?>
 					</div>
 
-					<div class="col-12 col-md-6">
-                        <div class="Box">
+					<div class="col-12 col-md-4">
+                        <div class="Box mb-4">
                 
                             <div class="Box-header">
                                 <h2 class="Box-title f3"><?php _e('Quizübersicht:', 'prolog'); ?></h2>
@@ -60,8 +60,20 @@
                                 </ul>
                                 <?php
                                 } ?>
-                            <div>
-					</div>
+                            </div>
+                            
+                            <div class="d-flex flex-justify-center flex-items-center">
+                                <div class="BtnGroup">
+                                    <a href="<?php echo esc_url(get_field('last_task')); ?>" class="btn BtnGroup-item">
+                                        <?php _e('< Vorherige Aufgabe', 'prolog'); ?>
+                                    </a>
+                                    <a href="<?php echo esc_url(get_field('next_task')); ?>" class="btn BtnGroup-item">
+                                        <?php _e('> Nächster Aufgabe', 'prolog'); ?>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
 				</div>
 
 			</article>
