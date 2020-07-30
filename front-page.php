@@ -7,6 +7,7 @@
  * @package WordPress
  * @since 1.0.0
  */
+
 ?>
 
 <?php get_header(); ?>
@@ -18,13 +19,20 @@
             <div class="d-flex flex-wrap flex-justify-center flex-items-center text-center">
     
                 <article class="col-12 col-md-9 mt-6">
-                    <h1 class="h0-mktg mb-3">
-                        Willkommen auf dem begleitenden eLearning Portal des <a target="_blank" title="Wiebke Petersens Kurswebseite besuchen" href="https://user.phil.hhu.de/~petersen/WiSe1718_Prolog/WiSe1718_Prolog.html">Grundkurs Prolog</a>
-                    </h1>
 
-                    <span class="d-block f3">Bearbeite die Kapitel und ihre Quizze, schaue dir die Foliensätze an oder nutze den Compiler zur Überprüfung deiner Lösung.</span>
+                    <?php // get backend content
+                    if (have_posts()) { ?>
+
+                        <?php
+                        // Load posts loop.
+                        while (have_posts()) {
+                            the_post();
+                        
+                            the_content();
+                        }
+                    } ?>
+
                 </article>
-            
             </div>
 
             <hr class="my-6" />
