@@ -16,28 +16,36 @@ $programNow = get_field('program_now');
 ?>
 
 <div class="gutter d-flex flex-wrap flex-justify-center flex-items-center">
+
     <?php // conditional output last task
     if (!empty($lastTask)) { ?>
+
         <a  class="btn btn-blue mr-2"
             href="<?php echo esc_url($lastTask); ?>">
-            <?php _e('< Vorheriger Schritt', 'prolog'); ?>
+                <?php _e('< Vorheriger Schritt', 'prolog'); ?>
         </a>
+
     <?php
     }
     // conditional output last task
     if (!empty($nextTask)) { ?>
+
         <a  class="btn btn-blue mr-2"
             href="<?php echo esc_url($nextTask); ?>">
-            <?php _e('> Nächster Schritt', 'prolog'); ?>
+                <?php _e('> Nächster Schritt', 'prolog'); ?>
         </a>
+
     <?php
     }
     // conditional output last task
     if (!empty($programNow)) { ?>
+
         <a  class="btn btn-grey"
             href="<?php echo esc_url($programNow); ?>">
-            <?php _e('>> Direkt Programmieren', 'prolog'); ?>
+                <?php _e('>> Direkt Programmieren', 'prolog'); ?>
         </a>
+
     <?php
     } ?>
+
 </div>

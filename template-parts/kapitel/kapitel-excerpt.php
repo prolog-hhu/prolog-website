@@ -33,7 +33,7 @@ $musterloesungAnzeigen = get_field('musterlosung_anzeigen');
             <a  class="btn btn-primary btn-sm mt-2" 
                 href="<?php the_permalink(); ?>" 
                 title="<?php the_title_attribute(); ?>">
-                    Weiterlesen
+                    <?php _e('Weiterlesen', 'prolog'); ?>
             </a>
 
             <?php

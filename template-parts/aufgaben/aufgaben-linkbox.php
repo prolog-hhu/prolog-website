@@ -35,10 +35,13 @@
                             <?php echo esc_html($link['title']); ?>
                     </a>
                 </li>
-        <?php
+
+            <?php
             } ?>
 
         </ul>
+
     <?php
     } ?>
+    
 </div>

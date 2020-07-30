@@ -28,8 +28,9 @@ $musterloesungAnzeigen = get_field('musterlosung_anzeigen');
         </a>
         
     <?php
+    }
     // conditional output PDF Folien
-    } if (!empty($pdfFolien)) { ?>
+    if (!empty($pdfFolien)) { ?>
 
         <a  class="btn btn-outline mb-3 mr-3"
             href="<?php echo esc_url($pdfFolien); ?>"
