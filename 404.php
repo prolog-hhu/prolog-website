@@ -13,16 +13,16 @@
 
 <main class="container-md px-3 py-6">
 
-        <h1 class="mb-2">
-                <?php _e('Sorry! Hier gibt es nichts zu finden.', 'prlg'); ?>
-        </h1>
+	<h1 class="mb-2">
+		<?php _e('Sorry! Hier gibt es nichts zu finden.', 'prlg'); ?>
+	</h1>
 
-        <p>
-                <?php _e('Versuch es doch einmal mit der Suchfunktion.', 'prlg'); ?>
-        </p>
+	<p>
+		<?php _e('Versuch es doch einmal mit der Suchfunktion.', 'prlg'); ?>
+	</p>
 
-        <?php get_search_form(); ?>
+	<?php get_search_form(); ?>
 
-</main><!-- #main -->
+</main>
 
 <?php get_footer(); ?>

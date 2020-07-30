@@ -14,22 +14,28 @@
 	<main class="container-xl px-3 py-6">
 
 		<?php
-		if ( have_posts() ) {
+        if (have_posts()) {
 
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-				
-				get_template_part( 'template-parts/content/content' );
-			}
+            // Load posts loop.
+            while (have_posts()) {
+                the_post(); ?>
 
-		} else {
+				<article id="post-<?php the_ID(); ?>">
 
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
+					<h1 class="mb-4"><?php the_title(); ?></h1>
 
-		}
-		?>
+					<?php the_content(); ?>
+
+				</article>
+
+			<?php
+            }
+        } else {
+
+            // If no content, include the "No posts found" template.
+            get_template_part('template-parts/content/content', 'none');
+        }
+        ?>
 
 	</main>
 <?php get_footer(); ?>
