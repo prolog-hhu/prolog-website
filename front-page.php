@@ -31,7 +31,7 @@
 
             <div class="gutter d-flex flex-wrap flex-justify-between">
                 <?php
-                    $loop = new WP_Query(array( 'post_type' => 'wiki', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
+                    $loop = new WP_Query(array( 'post_type' => 'kapitel', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
 
                     if ($loop->have_posts()) :
                         while ($loop->have_posts()) : $loop->the_post(); ?>

@@ -14,12 +14,11 @@
 	<main class="container-xl px-3 py-6">
 
 		<?php
-		if ( have_posts() ) {
+        if (have_posts()) {
 
-			// Load posts loop.
-			while ( have_posts() ) {
-				the_post();
-			?>
+            // Load posts loop.
+            while (have_posts()) {
+                the_post(); ?>
 				
 				<article id="post-<?php the_ID(); ?>">
 
@@ -31,7 +30,7 @@
 
 						<a class="btn btn-outline mb-3 mr-3" href="<?php the_field('pdf_folien') ?>" target="_blank">Folien ansehen</a>
 
-						<?php if(get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == TRUE): ?>
+						<?php if (get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == true): ?>
 							<a class="btn btn-invisible mb-3 mr-3" href="<?php the_field('musterlosung') ?>">Musterlösungen herunterladen</a>
 						<?php endif; ?>
 					</div>
@@ -40,15 +39,13 @@
 
 				</article>
 			<?php
-			}
+            }
+        } else {
 
-		} else {
-
-			// If no content, include the "No posts found" template.
-			get_template_part( 'template-parts/content/content', 'none' );
-
-		}
-		?>
+            // If no content, include the "No posts found" template.
+            get_template_part('template-parts/content/content', 'none');
+        }
+        ?>
 
 	</main>
 <?php get_footer(); ?>

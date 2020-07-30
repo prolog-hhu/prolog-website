@@ -8,30 +8,30 @@
 
 /**
  *
- * Register: Wiki
+ * Register: Kapitel
  *
  */
-add_action('init', 'wiki_init');
+add_action('init', 'kapitel_init');
 
 /**
  * Register a book post type.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
-function wiki_init()
+function kapitel_init()
 {
     $labels = array(
-        'name'               => _x('Wiki', 'prlg'),
-        'singular_name'      => _x('Wikieintrag', 'prlg'),
-        'menu_name'          => _x('Wiki', 'prlg'),
-        'name_admin_bar'     => _x('Wiki', 'prlg'),
-        'add_new'            => _x('Neuer Eintrag', 'prlg'),
-        'add_new_item'       => __('Neuen Eintrag hinzufügen', 'prlg'),
-        'new_item'           => __('Neuer Eintrag', 'prlg'),
-        'edit_item'          => __('Eintrag bearbeiten', 'prlg'),
-        'view_item'          => __('Einträge anzeigen', 'prlg'),
-        'all_items'          => __('Alle Einträge', 'prlg'),
-        'search_items'       => __('Suche Einträge', 'prlg'),
+        'name'               => _x('Kapitel', 'prlg'),
+        'singular_name'      => _x('Kapitel', 'prlg'),
+        'menu_name'          => _x('Kapitel', 'prlg'),
+        'name_admin_bar'     => _x('Kapitel', 'prlg'),
+        'add_new'            => _x('Neues Kapitel', 'prlg'),
+        'add_new_item'       => __('Neues Kapitel hinzufügen', 'prlg'),
+        'new_item'           => __('Neues Kapitel', 'prlg'),
+        'edit_item'          => __('Kapitel bearbeiten', 'prlg'),
+        'view_item'          => __('Kapitel anzeigen', 'prlg'),
+        'all_items'          => __('Alle Kapitel', 'prlg'),
+        'search_items'       => __('Suche Kapitel', 'prlg'),
         'parent_item_colon'  => __('Elterneintrag:', 'prlg'),
         'not_found'          => __('Kein Eintrag gefunden.', 'prlg'),
         'not_found_in_trash' => __('Kein Eintrag im Papierkorb gefunden.', 'prlg')
@@ -45,7 +45,7 @@ function wiki_init()
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'wiki' ),
+        'rewrite'            => array( 'slug' => 'kapitel' ),
         'capability_type'    => 'page',
         'has_archive'        => true,
         'hierarchical'       => false,
@@ -55,37 +55,37 @@ function wiki_init()
         'supports'           => array( 'title', 'editor', 'author', 'excerpt' )
     );
 
-    register_post_type('wiki', $args);
+    register_post_type('kapitel', $args);
 }
 
 /******************************************************************************/
 
 /**
  *
- * Register: Lektionen
+ * Register: Aufgaben
  *
  */
-add_action('init', 'lektionen_init');
+add_action('init', 'aufgaben_init');
 
 /**
  * Register a book post type.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_post_type
  */
-function lektionen_init()
+function aufgaben_init()
 {
     $labels = array(
-        'name'               => _x('Lektionen', 'prlg'),
-        'singular_name'      => _x('Lektion', 'prlg'),
-        'menu_name'          => _x('Lektionen', 'prlg'),
-        'name_admin_bar'     => _x('Lektionen', 'prlg'),
-        'add_new'            => _x('Neue Lektion', 'prlg'),
-        'add_new_item'       => __('Neue Lektion hinzufügen', 'prlg'),
-        'new_item'           => __('Neue Lektion', 'prlg'),
-        'edit_item'          => __('Lektion bearbeiten', 'prlg'),
-        'view_item'          => __('Einträge anzeigen', 'prlg'),
-        'all_items'          => __('Alle Einträge', 'prlg'),
-        'search_items'       => __('Suche Einträge', 'prlg'),
+        'name'               => _x('Aufgaben', 'prlg'),
+        'singular_name'      => _x('Aufgabe', 'prlg'),
+        'menu_name'          => _x('Aufgaben', 'prlg'),
+        'name_admin_bar'     => _x('Aufgaben', 'prlg'),
+        'add_new'            => _x('Neue Aufgabe', 'prlg'),
+        'add_new_item'       => __('Neue Aufgabe hinzufügen', 'prlg'),
+        'new_item'           => __('Neue Aufgabe', 'prlg'),
+        'edit_item'          => __('Aufgabe bearbeiten', 'prlg'),
+        'view_item'          => __('Aufgaben anzeigen', 'prlg'),
+        'all_items'          => __('Alle Aufgaben', 'prlg'),
+        'search_items'       => __('Suche Aufgabe', 'prlg'),
         'parent_item_colon'  => __('Elterneintrag:', 'prlg'),
         'not_found'          => __('Kein Eintrag gefunden.', 'prlg'),
         'not_found_in_trash' => __('Kein Eintrag im Papierkorb gefunden.', 'prlg')
@@ -99,7 +99,7 @@ function lektionen_init()
         'show_ui'            => true,
         'show_in_menu'       => true,
         'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'lektion' ),
+        'rewrite'            => array( 'slug' => 'aufgabe' ),
         'capability_type'    => 'page',
         'has_archive'        => true,
         'hierarchical'       => true,
@@ -109,7 +109,7 @@ function lektionen_init()
         'supports'           => array( 'title', 'editor', 'author', 'page-attributes' )
     );
 
-    register_post_type('lektionen', $args);
+    register_post_type('aufgaben', $args);
 }
 
 /******************************************************************************/
