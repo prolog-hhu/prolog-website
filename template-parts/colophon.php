@@ -32,7 +32,7 @@
             ?>
 
             <span class="text-white f5">
-                &copy; <?php echo date("Y") ?> <?php _e('Heinrich-Heine-Universität Düsseldorf') ?>
+                &copy; <?php echo date("Y") ?> <?php _e('Heinrich-Heine-Universität Düsseldorf', 'prolog') ?>
             </span>
 
         </div>

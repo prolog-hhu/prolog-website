@@ -30,7 +30,9 @@ $question = get_sub_field('question');
     
     ?>
 
-    <button type="submit" class="btn btn-primary">Überprüfen</button>
+    <button type="submit" class="btn btn-primary">
+        <?php _e('Überprüfen', 'prolog') ?>
+    </button>
 
     <div class="return flash mt-2" hidden></div>
    
