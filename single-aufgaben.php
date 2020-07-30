@@ -37,7 +37,8 @@
                             
                         <?php get_template_part('template-parts/aufgaben/aufgaben', 'navigation'); ?>
 
-                        </div>
+                    </div>
+                    
 				</div>
 
 			</article>
