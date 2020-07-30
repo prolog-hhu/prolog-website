@@ -9,7 +9,7 @@
  */
 ?>
 	
-		<?php get_template_part( 'template-parts/colophon' ); ?>		
+		<?php get_template_part('template-parts/colophon'); ?>		
 
 		<?php wp_footer(); ?>
 		
