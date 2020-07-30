@@ -9,19 +9,35 @@
  * @since 2.0.0
  */
 
+$lastTask = get_field('last_task');
 $nextTask = get_field('next_task');
-$nextChapter = get_field('next_chapter');
+$programNow = get_field('program_now');
 
 ?>
 
 <div class="gutter d-flex flex-wrap flex-justify-center flex-items-center">
-    <a href="#" class="btn btn-blue mr-2">
-        < Zum letzten Schritt
-    </a>
-    <a href="<?php echo esc_url($nextTask['url']); ?>" class="btn btn-blue mr-2">
-        > Nächster Schritt
-    </a>
-    <a href="<?php echo esc_url($nextChapter['url']); ?>" class="btn btn-grey">
-        >> Direkt Programmieren
-    </a>
+    <?php // conditional output last task
+    if (!empty($lastTask)) { ?>
+        <a  class="btn btn-blue mr-2"
+            href="<?php echo esc_url($lastTask); ?>">
+            <?php _e('< Vorheriger Schritt', 'prolog'); ?>
+        </a>
+    <?php
+    }
+    // conditional output last task
+    if (!empty($nextTask)) { ?>
+        <a  class="btn btn-blue mr-2"
+            href="<?php echo esc_url($nextTask); ?>">
+            <?php _e('> Nächster Schritt', 'prolog'); ?>
+        </a>
+    <?php
+    }
+    // conditional output last task
+    if (!empty($programNow)) { ?>
+        <a  class="btn btn-grey"
+            href="<?php echo esc_url($programNow); ?>">
+            <?php _e('>> Direkt Programmieren', 'prolog'); ?>
+        </a>
+    <?php
+    } ?>
 </div>
