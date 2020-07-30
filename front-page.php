@@ -12,64 +12,45 @@
 
 <?php get_header(); ?>
 
-    <main class="container-lg px-3 py-6">
+<main class="container-lg px-3 py-6">
 
-        <section>
+    <div class="d-flex flex-wrap flex-justify-center flex-items-center text-center">
+        <article class="col-12 col-md-9 mt-6">
 
-            <div class="d-flex flex-wrap flex-justify-center flex-items-center text-center">
-    
-                <article class="col-12 col-md-9 mt-6">
+            <?php // get backend content
+            if (have_posts()) { ?>
 
-                    <?php // get backend content
-                    if (have_posts()) { ?>
-
-                        <?php
-                        // Load posts loop.
-                        while (have_posts()) {
-                            the_post();
-                        
-                            the_content();
-                        }
-                    } ?>
-
-                </article>
-            </div>
-
-            <hr class="my-6" />
-
-            <div class="gutter d-flex flex-wrap flex-justify-between">
                 <?php
-                    $loop = new WP_Query(array( 'post_type' => 'kapitel', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
+                // Load posts loop.
+                while (have_posts()) {
+                    the_post();
+                
+                    the_content();
+                }
+            } ?>
 
-                    if ($loop->have_posts()) :
-                        while ($loop->have_posts()) : $loop->the_post(); ?>
+        </article>
+    </div>
 
-                            <div class="col-12 col-md-6 mb-5">
-                                <article class="collapse py-3 px-4 border border-gray-light">
-                                    <div class="header">
-                                        <h3 class="h2"><?php echo get_the_title(); ?></h3>
-                                    </div>
-                                    <div class="content mt-3">
-                                        <?php the_excerpt(); ?>
-                                        <a class="btn btn-primary btn-sm mt-2" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">Weiterlesen</a>
+    <hr class="my-6" />
 
-                                        <a class="btn btn-outline btn-sm mt-2" href="<?php the_field('pdf_folien'); ?>" target="_blank">Folien ansehen</a>
+    <div class="gutter d-flex flex-wrap flex-justify-between">
 
-                                        <?php if (get_field('musterlosung') != '' && get_field('musterlosung_anzeigen') == true): ?>
-                                            <a class="btn btn-invisible btn-sm mt-2" href="<?php the_field('musterlosung'); ?>" target="_blank">Musterlösung herunterladen</a>
-                                        <?php endif; ?>
-                                    </div>
-                                </article>
-                            </div>
-                        
-                        <?php endwhile;
-                    endif;
-                    wp_reset_postdata();
-                ?>
-            </div>
+        <?php
+            $loop = new WP_Query(array( 'post_type' => 'kapitel', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
 
-        </section>
+            if ($loop->have_posts()) {
+                while ($loop->have_posts()) {
+                    $loop->the_post();
 
-    </main>
+                    get_template_part('template-parts/kapitel/kapitel', 'excerpt');
+                }
+            }
+            wp_reset_postdata();
+        ?>
+
+    </div>
+
+</main>
 
 <?php get_footer(); ?>
