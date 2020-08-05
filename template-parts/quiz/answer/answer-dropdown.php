@@ -12,7 +12,7 @@
 ?>
 
 <select class="form-select input-block mb-2" aria-label="Preference">
-    <option>Wähle aus:</option>
+    <option incorrect>Wähle aus:</option>
 
     <?php
         while (have_rows('answer')) {
