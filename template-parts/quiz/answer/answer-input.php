@@ -27,10 +27,19 @@ while (have_rows('answer')) {
 
 ?>
 
-<input  
-    class="form-control input-block mb-2 input-answer" 
-    type="text" 
-    placeholder="Gib hier deine Antwort ein." 
-    aria-label="Gib hier deine Antwort ein."
-    data-answers="<?php echo htmlspecialchars(json_encode($answers), ENT_QUOTES, 'UTF-8') ?>"
->
+<div class="answer form-group form-checkbox mb-2 pl-0">
+    <label>
+
+        <input  
+            class="form-control input-block" 
+            type="text" 
+            placeholder="Gib hier deine Antwort ein." 
+            aria-label="Gib hier deine Antwort ein."
+            data-answers="<?php echo htmlspecialchars(json_encode($answers), ENT_QUOTES, 'UTF-8') ?>"
+        >
+
+    </label>
+
+    <span class="response error position-relative width-fit"></span>
+
+</div>
