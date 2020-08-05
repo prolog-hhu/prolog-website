@@ -10,14 +10,18 @@
 
 # get and save quiz content
 the_row();
-$question = get_sub_field('question');
 
+$question = get_sub_field('question');
 $questionType = $question['type'];
 $questionDescription = $question['description'];
 
 ?>
 
-<form class="quiz mb-4" action="#">
+<form 
+    class="quiz mb-4" 
+    action="#" 
+    data-type="<?php echo $questionType ?>"
+>
 
     <?php
 
@@ -43,10 +47,15 @@ $questionDescription = $question['description'];
     
     ?>
 
-    <button type="submit" class="btn btn-primary">
+    <button 
+        class="btn btn-primary"
+        type="submit" 
+    >
         <?php _e('Überprüfen', 'prolog') ?>
     </button>
 
-    <div class="return flash mt-2" hidden></div>
+    <div 
+        class="return flash mt-2" 
+        hidden></div>
    
 </form>
