@@ -16,9 +16,18 @@
 
     <?php
         while (have_rows('answer')) {
-            the_row(); ?>
+            the_row();
+            
+            $correct = get_sub_field('correct');
+            $content = get_sub_field('content');
+            $return = get_sub_field('return'); ?>
 
-            <option><?php echo get_sub_field('content') ?></option>
+            <option
+                <?php echo $correct ? "correct" : "incorrect" ?>
+                data-return="<?php echo $return ?>"
+            >
+                <?php echo $content; ?>
+            </option>
         
     <?php
         } ?>
