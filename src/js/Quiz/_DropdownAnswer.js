@@ -6,17 +6,23 @@ class DropdownAnswer {
     this.response = this.answer.querySelector(".response");
 
     this.state = null;
+    this.responseContent = "";
   }
 
   updateState() {
-    if (
-      this.select.options[this.select.selectedIndex].hasAttribute("correct")
-    ) {
+    let selectedID = this.select.selectedIndex;
+
+    if (this.select.options[selectedID].hasAttribute("correct")) {
       this.state = true;
+      this.responseContent = "";
     } else {
       this.state = false;
-    }
+      this.responseContent = this.select.options[selectedID].dataset.return;
 
+      if (this.responseContent == "") {
+        this.responseContent = config["DefaultResponseFalse"];
+      }
+    }
     return this.state;
   }
 
@@ -26,15 +32,7 @@ class DropdownAnswer {
       this.response.innerHTML = "";
     } else {
       this.answer.classList.add("errored");
-
-      let responseContent = this.select.options[this.select.selectedIndex]
-        .dataset.return;
-
-      if (responseContent != undefined) {
-        this.response.innerHTML = responseContent;
-      } else if (responseContent == "") {
-        this.response.innerHTML = config["DefaultResponseFalse"];
-      }
+      this.response.innerHTML = this.responseContent;
     }
   }
 }
