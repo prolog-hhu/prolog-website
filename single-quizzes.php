@@ -27,11 +27,11 @@
 
 				<div class="gutter d-flex flex-wrap flex-justify-center flex-items-center mb-4">
 
-					<div class="col-12 col-md-6 mb-4 mb-md-0">
+					<div class="col-12 col-md-6 col-lg-7 mb-4 mb-md-0">
 						<?php the_content(); ?>
 					</div>
 
-					<div class="col-12 col-md-6">
+					<div class="col-12 col-md-6 col-lg-5">
 						<?php // Check quizzes exists and loop through
                             if (have_rows('quiz')) {
                                 while (have_rows('quiz')) {
