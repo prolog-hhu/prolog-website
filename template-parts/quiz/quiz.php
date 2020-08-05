@@ -24,7 +24,7 @@ $question = get_sub_field('question');
     # loop through each answer
     if (have_rows('answer')) {
         while (have_rows('answer')) {
-            get_template_part('template-parts/quiz/quiz', 'answer');
+            get_template_part('template-parts/quiz/answer/answer', 'choice');
         }
     }
     
