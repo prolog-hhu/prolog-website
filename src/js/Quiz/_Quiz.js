@@ -1,20 +1,38 @@
+import ChoiceAnswer from "./_ChoiceAnswer";
+import DropdownAnswer from "./_DropdownAnswer";
+import InputAnswer from "./_InputAnswer";
+
 class Quiz {
   constructor(el) {
-    // save self DOM element
+    // save self DOM element, state handler
     this.quiz = el;
+    this.state = null;
 
     // construct sub components
     this.answers = this.constructAnswers();
     this.submit = this.constructSubmit();
-    this.return = this.quiz.querySelector(".return");
+    this.response = this.quiz.querySelector(".return");
   }
 
   constructAnswers() {
-    let elements = this.quiz.getElementsByClassName("answer");
     let answers = [];
+    let answerObj = Object;
 
-    for (let el of elements) {
-      answers.push(new Answer(el));
+    // create choice answers
+    if (this.quiz.dataset.type == "choice") {
+      answerObj = ChoiceAnswer;
+    }
+    // create dropdown answers
+    else if (this.quiz.dataset.type == "dropdown") {
+      answerObj = DropdownAnswer;
+    }
+    // create input answers
+    else if (this.quiz.dataset.type == "input") {
+      answerObj = InputAnswer;
+    }
+
+    for (let el of this.quiz.getElementsByClassName("answer")) {
+      answers.push(new answerObj(el));
     }
 
     return answers;
@@ -30,62 +48,43 @@ class Quiz {
   handleSubmit(e) {
     e.preventDefault();
 
-    let result = true;
+    this.state = true;
 
     this.answers.forEach((item) => {
-      let state = item.getState();
-      item.setState(state);
-
-      if (state === false) {
-        result = false;
+      if (item.updateState() === false) {
+        this.state = false;
       }
+
+      item.updateResponse();
     });
 
-    this.return.removeAttribute("hidden");
+    this.updateResponse();
+  }
+
+  updateResponse() {
+    this.response.removeAttribute("hidden");
+
     // quiz success
-    if (result === true) {
-      this.return.classList.remove("flash-error");
-      this.return.classList.add("flash-success");
-      this.return.innerHTML = "Super, alles richtig!";
-    } // quiz failed
-    else if (result === false) {
-      this.return.classList.remove("flash-success");
-      this.return.classList.add("flash-error");
-      this.return.innerHTML =
-        "Leider nicht richtig! Schaue dir bitte die Rückmeldung an.";
+    if (this.state === true) {
+      // handle user response
+      this.response.classList.remove("flash-error");
+      this.response.classList.add("flash-success");
+      this.response.innerHTML = config["DefaultResponseTrue"];
+    }
+    // quiz failed
+    else if (this.state === false) {
+      // handle user response
+      this.response.classList.remove("flash-success");
+      this.response.classList.add("flash-error");
+      this.response.innerHTML = config["DefaultResponseFalse"];
     }
   }
 }
 
-class Answer {
-  constructor(el) {
-    this.answer = el;
-    this.input = this.answer.querySelector("input");
-  }
-
-  getState() {
-    if (
-      this.input.checked == true && //
-      this.input.hasAttribute("correct")
-    ) {
-      return true;
-    } else if (
-      this.input.checked == false && //
-      this.input.hasAttribute("incorrect")
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  setState(bool) {
-    if (bool === true) {
-      this.answer.classList.remove("errored");
-    } else {
-      this.answer.classList.add("errored");
-    }
-  }
-}
+const config = {
+  DefaultResponseTrue: "Super, alles richtig!",
+  DefaultResponseFalse:
+    "Leider nicht richtig! Schaue dir bitte die Rückmeldung an.",
+};
 
 export default Quiz;
