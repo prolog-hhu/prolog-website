@@ -31,7 +31,7 @@ while (have_rows('answer')) {
     <label>
 
         <input  
-            class="form-control input-block" 
+            class="form-control input-block width-full" 
             type="text" 
             placeholder="Gib hier deine Antwort ein." 
             aria-label="Gib hier deine Antwort ein."
