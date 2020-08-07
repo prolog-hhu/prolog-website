@@ -22,7 +22,7 @@
             if (have_posts()) {
 
                 // get title
-                the_title('<h1 class="h0-mktg mb-3">', '</h1>');
+                the_title('<h1 class="h0-mktg">', '</h1>');
 
                 // Load posts loop.
                 while (have_posts()) {
@@ -35,7 +35,9 @@
         </article>
     </div>
 
-    <div class="gutter d-flex flex-wrap flex-justify-center">
+    <hr class="my-6" />
+
+    <div class="gutter d-flex flex-wrap flex-justify-between">
 
         <?php
             $loop = new WP_Query(array( 'post_type' => 'aufgaben', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
@@ -44,12 +46,11 @@
                 while ($loop->have_posts()) {
                     $loop->the_post(); ?>
 
-                    <a  
-                        class="btn btn-primary btn-large f4 mt-2" 
-                        href="<?php the_permalink(); ?>" 
-                        title="<?php the_title_attribute(); ?>">
-                            <?php the_title(); ?>
-                    </a>
+                    <div class="col-12 col-md-6 mb-5">
+                    
+                        <?php get_template_part('template-parts/aufgaben/aufgaben', 'linkbox'); ?>
+
+                    </div>
 
                 <?php
                 }
