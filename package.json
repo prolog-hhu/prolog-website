@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./webpack/start.js",
     "build": "cross-env NODE_ENV=production node ./webpack/build.js",
-    "postinstall": "npm run build"
+    "clean": "rm -r ./build",
+    "export": "npm run clean && npm run build"
   },
   "author": "Simon Münker",
   "license": "MIT",
