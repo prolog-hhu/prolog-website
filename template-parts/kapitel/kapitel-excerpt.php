@@ -22,7 +22,7 @@ $musterloesungAnzeigen = get_field('musterlosung_anzeigen');
 
         <div class="header">
             <h3 class="h2">
-                <?php echo get_the_title(); ?>
+                <?php the_title(); ?>
             </h3>
         </div>
 
