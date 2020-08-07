@@ -18,9 +18,8 @@
         <article class="col-12 col-md-9 mt-6">
 
             <?php // get backend content
-            if (have_posts()) { ?>
-
-                <?php
+            if (have_posts()) {
+                
                 // Load posts loop.
                 while (have_posts()) {
                     the_post();
