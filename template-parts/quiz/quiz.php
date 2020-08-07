@@ -55,7 +55,7 @@ $questionDescription = $question['description'];
     </button>
 
     <div 
-        class="return flash mt-2" 
+        class="return flash mt-2 text-bold" 
         hidden></div>
    
 </form>
