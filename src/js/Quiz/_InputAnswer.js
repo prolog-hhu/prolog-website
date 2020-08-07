@@ -1,35 +1,42 @@
-class InputAnswer {
-  constructor(el) {
-    // save self DOM element (container, input, response), state handler
-    this.answer = el;
-    this.input = this.answer.querySelector("input");
-    this.response = this.answer.querySelector(".response");
+import Answer from "./_Answer";
 
-    this.state = null;
-    this.responseContent = "";
+export default class InputAnswer extends Answer {
+  constructor(obj) {
+    super(obj, "input", ".response");
 
-    this.data = JSON.parse(this.input.dataset.answers);
+    // get embbed answer data
+    this.data = JSON.parse(this.interaction.dataset.answers);
   }
 
   updateState() {
     this.state = false;
     this.responseContent = "";
 
+    // handle empty answer
+    if (this.interaction.value == "") {
+      this.state = false;
+      this.responseContent = "Bitte gib eine Antwort ein!";
+      return this.state;
+    }
+
+    // loop through each possible negative and positive answer
     for (const item of this.data) {
-      let re = new RegExp(item["content"]);
+      // create regex and test it
+      let regex = new RegExp(item["content"]);
+      let match = regex.test(this.interaction.value);
 
       // positive correct match
-      if (re.test(this.input.value) && item["correct"] == true) {
+      if (match && item["correct"] == true) {
         this.state = true;
         return this.state;
       }
       // negativ correct match
-      else if (!re.test(this.input.value) && item["correct"] == true) {
+      else if (!match && item["correct"] == true) {
         this.state = false;
         this.responseContent += item["return"];
       }
       // negative incorrect match
-      else if (re.test(this.input.value) && item["correct"] == false) {
+      else if (match && item["correct"] == false) {
         this.state = false;
         this.responseContent += item["return"];
       }
@@ -38,24 +45,6 @@ class InputAnswer {
         this.state = false;
       }
     }
-    if (this.responseContent == "") {
-      this.responseContent = config["DefaultResponseFalse"];
-    }
     return this.state;
   }
-
-  updateResponse() {
-    if (this.state === true) {
-      this.answer.classList.remove("errored");
-    } else {
-      this.answer.classList.add("errored");
-      this.response.innerHTML = this.responseContent;
-    }
-  }
 }
-
-const config = {
-  DefaultResponseFalse: "Nicht richtig! Keine individuelle Rückmeldung.",
-};
-
-export default InputAnswer;

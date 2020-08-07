@@ -1,44 +1,22 @@
-class DropdownAnswer {
-  constructor(el) {
-    // save self DOM element (container, input, response), state handler
-    this.answer = el;
-    this.select = this.answer.querySelector("select");
-    this.response = this.answer.querySelector(".response");
+import Answer from "./_Answer";
 
-    this.state = null;
-    this.responseContent = "";
+export default class DropdownAnswer extends Answer {
+  constructor(obj) {
+    super(obj, "select", ".response");
   }
 
   updateState() {
-    let selectedID = this.select.selectedIndex;
+    let selectedID = this.interaction.selectedIndex;
 
-    if (this.select.options[selectedID].hasAttribute("correct")) {
+    if (this.interaction.options[selectedID].hasAttribute("correct")) {
       this.state = true;
       this.responseContent = "";
     } else {
       this.state = false;
-      this.responseContent = this.select.options[selectedID].dataset.return;
-
-      if (this.responseContent == "") {
-        this.responseContent = config["DefaultResponseFalse"];
-      }
+      this.responseContent = this.interaction.options[
+        selectedID
+      ].dataset.return;
     }
     return this.state;
   }
-
-  updateResponse() {
-    if (this.state === true) {
-      this.answer.classList.remove("errored");
-      this.response.innerHTML = "";
-    } else {
-      this.answer.classList.add("errored");
-      this.response.innerHTML = this.responseContent;
-    }
-  }
 }
-
-const config = {
-  DefaultResponseFalse: "Nicht richtig! Keine individuelle Rückmeldung.",
-};
-
-export default DropdownAnswer;
