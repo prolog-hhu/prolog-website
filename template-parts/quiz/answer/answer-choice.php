@@ -32,7 +32,7 @@ $return = get_sub_field('return');
         <?php // conditional feedback
         if (!empty($return)) { ?>
 
-            <span class="error position-relative width-fit">
+            <span class="response error position-relative width-fit">
                 <?php echo $return ?>
             </span>
 
