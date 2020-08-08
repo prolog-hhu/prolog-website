@@ -19,3 +19,6 @@
 
 # MAC OS temporary
 .DS_Store
+
+# python helper scripts
+/scripts
