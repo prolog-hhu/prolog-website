@@ -17,6 +17,12 @@ $programNow = get_field('program_now');
 
 <div class="gutter d-flex flex-wrap flex-justify-center flex-items-center">
 
+
+    <a  class="btn-link mr-2"
+        href="/aufgaben/">
+            <?php _e('<< Zur Übersicht', 'prolog'); ?>
+    </a>
+
     <?php // conditional output last task
     if (!empty($lastTask)) { ?>
 
