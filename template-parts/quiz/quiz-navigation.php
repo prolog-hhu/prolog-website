@@ -16,43 +16,63 @@ $programNow = get_field('program_now');
 ?>
 
 <div class="gutter d-flex flex-wrap flex-justify-center flex-items-center">
+    <div class="BtnGroup">
 
-
-    <a  class="btn-link mr-2"
-        href="/aufgaben/">
-            <?php _e('<< Zur Übersicht', 'prolog'); ?>
-    </a>
-
-    <?php // conditional output last task
-    if (!empty($lastTask)) { ?>
-
-        <a  class="btn btn-blue mr-2"
-            href="<?php echo esc_url($lastTask); ?>">
-                <?php _e('< Vorheriger Schritt', 'prolog'); ?>
+        <a  class="btn BtnGroup-item"
+            href="/aufgaben/"
+            title="<?php _e('Zur Übersicht', 'prolog'); ?>"
+            aria-label="<?php _e('Zur Übersicht', 'prolog'); ?>">
+                <?php
+                    get_template_part('template-parts/octicon/octicon', 'list');
+                    _e(' Übersicht', 'prolog');
+                ?>
         </a>
 
-    <?php
-    }
-    // conditional output last task
-    if (!empty($nextTask)) { ?>
+        <?php // conditional output last task
+        if (!empty($lastTask)) { ?>
 
-        <a  class="btn btn-blue mr-2"
-            href="<?php echo esc_url($nextTask); ?>">
-                <?php _e('> Nächster Schritt', 'prolog'); ?>
-        </a>
+            <a  class="btn BtnGroup-item"
+                href="<?php echo esc_url($lastTask); ?>"
+                title="<?php _e('Vorheriger Schritt', 'prolog'); ?>"
+                aria-label="<?php _e('Vorheriger Schritt', 'prolog'); ?>">
+                <?php
+                    get_template_part('template-parts/octicon/octicon', 'arrowleft');
+                    _e(' Zurück', 'prolog');
+                ?>
+            </a>
 
-    <?php
-    }
-    // conditional output last task
-    if (!empty($programNow)) { ?>
+        <?php
+        }
+        // conditional output last task
+        if (!empty($nextTask)) { ?>
 
-        <a  class="btn btn-grey"
-            href="<?php echo esc_url($programNow); ?>"
-            target="_blank">
-                <?php _e('>> Direkt Programmieren', 'prolog'); ?>
-        </a>
+            <a  class="btn BtnGroup-item"
+                href="<?php echo esc_url($nextTask); ?>"
+                title="<?php _e('Nächster Schritt', 'prolog'); ?>"
+                aria-label="<?php _e('Nächster Schritt', 'prolog'); ?>">
+                <?php
+                    get_template_part('template-parts/octicon/octicon', 'arrowright');
+                    _e(' Weiter', 'prolog');
+                ?>
+            </a>
 
-    <?php
-    } ?>
+        <?php
+        }
+        // conditional output last task
+        if (!empty($programNow)) { ?>
 
+            <a  class="btn BtnGroup-item"
+                href="<?php echo esc_url($programNow); ?>"
+                target="_blank"
+                title="<?php _e('Direkt Programmieren', 'prolog'); ?>"
+                aria-label="<?php _e('Direkt Programmieren', 'prolog'); ?>">
+                    <?php
+                        get_template_part('template-parts/octicon/octicon', 'code');
+                        _e(' Programmieren', 'prolog');
+                    ?>
+            </a>
+
+        <?php
+        } ?>
+    </div>
 </div>
