@@ -47,7 +47,8 @@ $programNow = get_field('program_now');
     if (!empty($programNow)) { ?>
 
         <a  class="btn btn-grey"
-            href="<?php echo esc_url($programNow); ?>">
+            href="<?php echo esc_url($programNow); ?>"
+            target="_blank">
                 <?php _e('>> Direkt Programmieren', 'prolog'); ?>
         </a>
 
