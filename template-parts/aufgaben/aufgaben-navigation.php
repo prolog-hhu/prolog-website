@@ -32,7 +32,7 @@ $nextTask = get_field('next_task');
 
             <a  class="btn BtnGroup-item"
                 href="<?php echo esc_url($nextTask); ?>">
-                    <?php _e('> Nächstes Aufgabe', 'prolog'); ?>
+                    <?php _e('> Nächste Aufgabe', 'prolog'); ?>
             </a>
 
         <?php
