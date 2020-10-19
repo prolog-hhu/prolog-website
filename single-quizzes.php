@@ -23,15 +23,15 @@
 
 			<article id="post-<?php the_ID(); ?>">
 
-				<h1 class="mb-4"><?php the_title(); ?></h1>
+				<h1><?php the_title(); ?></h1>
 
-				<div class="gutter d-flex flex-wrap flex-justify-center flex-items-center mb-4">
+				<div class="gutter d-flex flex-wrap flex-justify-center flex-items-baseline mb-4">
 
-					<div class="col-12 col-md-6 col-lg-7 mb-4 mb-md-0">
+					<div class="position-md-sticky top-0 col-12 col-md-6 col-lg-7 py-4 mb-md-0">
 						<?php the_content(); ?>
 					</div>
 
-					<div class="col-12 col-md-6 col-lg-5">
+					<div class="col-12 col-md-6 col-lg-5 py-4">
 						<?php // Check quizzes exists and loop through
                             if (have_rows('quiz')) {
                                 while (have_rows('quiz')) {
