@@ -5,7 +5,7 @@
 
 // Global requirements
 
-// Modules
+// Primer
 @import "@primer/css/base/index.scss";
 @import "@primer/css/support/index.scss";
 @import "@primer/css/layout/index.scss";
@@ -17,6 +17,9 @@
 @import "@primer/css/box/index.scss";
 
 @import "@primer/css/utilities/index.scss";
+
+// Custom
+@import "scss/reset.scss";
 
 @import "scss/navigation.scss";
 @import "scss/gutenberg.scss";
