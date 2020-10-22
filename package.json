@@ -11,30 +11,31 @@
   "author": "Simon Münker",
   "license": "MIT",
   "dependencies": {
-    "@primer/css": "^15.0.0",
-    "jquery": "^3.5.1"
+    "@primer/css": "^15.2.0",
+    "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
-    "assets-webpack-plugin": "^5.0.3",
-    "autoprefixer": "^9.8.4",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "assets-webpack-plugin": "^5.1.2",
+    "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "browser-sync-webpack-plugin": "^2.2.0",
     "clean-webpack-plugin": "^1.0.0",
     "cross-env": "^5.2.1",
     "css-loader": "^2.1.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "mini-css-extract-plugin": "^0.5.0",
     "minimist": "^1.2.5",
     "node-sass": "^4.14.1",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
-    "terser-webpack-plugin": "^1.4.4",
-    "webpack": "^4.43.0"
+    "terser-webpack-plugin": "^1.4.5",
+    "webpack": "^5.1.3"
   }
 }
