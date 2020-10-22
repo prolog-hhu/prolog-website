@@ -16,7 +16,7 @@ function remove_menus()
     // remove_menu_page( 'jetpack' );                     //Jetpack*
     
     remove_menu_page('edit.php');                       //Posts
-    remove_menu_page('edit-comments.php');              //Comments
+    // remove_menu_page('edit-comments.php');              //Comments
 
     // remove_menu_page( 'upload.php' );                  //Media
     // remove_menu_page( 'edit.php?post_type=page' );     //Pages
@@ -31,7 +31,7 @@ function remove_menus()
     //
     // remove_menu_page( 'options-general.php' );
     // remove_submenu_page('options-general.php', 'options-writing.php');
-    remove_submenu_page('options-general.php', 'options-discussion.php');
+    // remove_submenu_page('options-general.php', 'options-discussion.php');
     // remove_submenu_page('options-general.php', 'options-permalink.php');
 
     //

@@ -106,7 +106,7 @@ function aufgaben_init()
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-paperclip',
         'show_in_rest' 	     => true,
-        'supports'           => array( 'title', 'editor', 'author', 'page-attributes' )
+        'supports'           => array( 'title', 'editor', 'author', 'page-attributes', 'comments' )
     );
 
     register_post_type('aufgaben', $args);
@@ -160,7 +160,7 @@ function quizzes_init()
         'menu_position'      => 20,
         'menu_icon'          => 'dashicons-lightbulb',
         'show_in_rest' 	     => true,
-        'supports'           => array( 'title', 'editor', 'author' )
+        'supports'           => array( 'title', 'editor', 'author', 'comments' )
     );
 
     register_post_type('quizzes', $args);
