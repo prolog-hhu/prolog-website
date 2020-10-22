@@ -69,6 +69,9 @@ add_action('after_setup_theme', function () {
     add_editor_style('style-editor.css');
 }, 20);
 
+// Custom comment walker.
+require get_template_directory() . '/classes/class-prolog-walker-comment.php';
+
 
 add_action('rest_api_init', function () {
     $namespace = 'presspack/v1';
