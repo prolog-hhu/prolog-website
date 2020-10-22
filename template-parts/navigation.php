@@ -16,7 +16,7 @@
      <div class="d-flex flex-justify-between flex-items-center mb-4">
         <span class="f2 text-bold px-3">Navigation</span>
 
-        <button id="close-navigation" class="btn-link p-3" type="button" aria-label="close navigation">
+        <button id="close-navigation" class="btn-link p-3 text-gray-dark" type="button" aria-label="close navigation">
             <?php get_template_part('template-parts/octicon/octicon', 'close32'); ?>
         </button>
 
