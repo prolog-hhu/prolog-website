@@ -18,7 +18,7 @@
 <div class="container-md px-3 py-6 border-top border-gray-darker">
     <div class="gutter d-flex flex-wrap flex-justify-center flex-items-top mb-4">
 
-	    <div id="comments" class="comments col-12 col-md-6">
+	    <div id="comments" class="comments col-12 col-md-6 mb-4 mb-md-0">
 
             <?php if (! have_comments()) { ?>
                 <div class="flash flash-warn text-bold">
