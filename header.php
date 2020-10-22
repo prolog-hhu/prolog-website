@@ -32,4 +32,4 @@
 		<div id="page">
 
 		<?php get_template_part('template-parts/topbar/topbar'); ?>
-		<?php get_template_part('template-parts/navigation/navigation'); ?>
+		<?php get_template_part('template-parts/navigation'); ?>
