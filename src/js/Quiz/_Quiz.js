@@ -1,3 +1,6 @@
+import Cookies from 'js-cookie'
+
+
 import ChoiceAnswer from "./_ChoiceAnswer";
 import DropdownAnswer from "./_DropdownAnswer";
 import InputAnswer from "./_InputAnswer";
@@ -12,6 +15,8 @@ class Quiz {
     this.answers = this.constructAnswers();
     this.submit = this.constructSubmit();
     this.response = this.quiz.querySelector(".return");
+
+    this.progress = this.getProgress();
   }
 
   constructAnswers() {
@@ -70,6 +75,9 @@ class Quiz {
       this.response.classList.remove("flash-error");
       this.response.classList.add("flash-success");
       this.response.innerHTML = config["DefaultResponseTrue"];
+
+      this.progress[window.location.pathname] = 1;
+      Cookies.set('quiz_progress', this.progress)
     }
     // quiz failed
     else if (this.state === false) {
@@ -78,6 +86,18 @@ class Quiz {
       this.response.classList.add("flash-error");
       this.response.innerHTML = config["DefaultResponseFalse"];
     }
+  }
+
+  getProgress() {
+    let data = Cookies.get("quiz_progress");
+
+    if(data != undefined) {
+      return JSON.parse(data)
+
+    } else {
+      return {}
+    }
+
   }
 }
 
