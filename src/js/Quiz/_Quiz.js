@@ -1,6 +1,5 @@
 import Cookies from 'js-cookie'
 
-
 import ChoiceAnswer from "./_ChoiceAnswer";
 import DropdownAnswer from "./_DropdownAnswer";
 import InputAnswer from "./_InputAnswer";
@@ -76,7 +75,7 @@ class Quiz {
       this.response.classList.add("flash-success");
       this.response.innerHTML = config["DefaultResponseTrue"];
 
-      this.progress[window.location.pathname] = 1;
+      this.progress["progress"].push(window.location.pathname);
       Cookies.set('quiz_progress', this.progress)
     }
     // quiz failed
@@ -95,7 +94,7 @@ class Quiz {
       return JSON.parse(data)
 
     } else {
-      return {}
+      return {"progress": []}
     }
 
   }
