@@ -105,6 +105,12 @@ function change_login_logo_url()
 add_filter('login_headerurl', 'change_login_logo_url');
 
 
-// FIXME
-add_filter('sensei_question_show_answers', '__return_true');
-add_filter('sensei_question_answer_message_text', '__return_empty_string');
+/**
+ * Changes Admin Footer Text
+ * src: https://www.isitwp.com/change-footer-text-in-wp-admin/
+ */
+function change_admin_footer_text($mein_text)
+{
+    return 'Entwickelt durch den <a href="https://simon-muenker.de" target="_blank">fabulösen Zauberer Simon.</a>';
+}
+add_filter('admin_footer_text', 'change_admin_footer_text');
