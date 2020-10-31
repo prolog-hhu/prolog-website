@@ -3,13 +3,14 @@ import {
 } from './Utils';
 
 
-class Wiki {
+class LinkIDs {
 
     constructor() {
 
         this.isSingle = document.body.classList.contains('single-wiki');
+        this.isTaskOverview = document.body.classList.contains('aufgaben');
 
-        if (this.isSingle === true) {
+        if (this.isSingle === true || this.isTaskOverview == true) {
 
             let items = document.querySelectorAll("h1, h2, h3");
 
@@ -21,4 +22,4 @@ class Wiki {
     }
 }
 
-let myWiki = new Wiki();
+let myLinkIDs = new LinkIDs();

@@ -1,6 +1,6 @@
 import "./js/navigation";
 import "./js/redirects";
-import "./js/wiki";
+import "./js/linkids";
 import "./js/collapse";
 
 import "./js/Quiz/";
