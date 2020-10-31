@@ -64,7 +64,9 @@
 
                     <div class="col-12 my-4">
 
-                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                        <a  href="<?php the_permalink(); ?>" 
+                            title="<?php the_title_attribute(); ?>"
+                        >
                             <h2 class="h1-mktg text-gray-dark border-bottom">
                                 <?php the_title(); ?>
                             </h2>
