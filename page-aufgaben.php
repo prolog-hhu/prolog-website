@@ -35,27 +35,74 @@
         </article>
     </div>
 
-    <hr class="my-6" />
-
     <div class="gutter d-flex flex-wrap flex-justify-between">
 
         <?php
-            $loop = new WP_Query(array( 'post_type' => 'aufgaben', 'order' => 'ASC', 'orderby' => 'name', 'posts_per_page'=>-1));
 
-            if ($loop->have_posts()) {
-                while ($loop->have_posts()) {
-                    $loop->the_post(); ?>
+            $chapters = new WP_Query(
+                array(
+                    'post_type' =>          'kapitel',
+                    'order' =>              'ASC',
+                    'orderby' =>            'name',
+                    'posts_per_page'=>      -1
+                )
+            );
 
-                    <div class="col-12 col-md-6 mb-5">
-                    
-                        <?php get_template_part('template-parts/aufgaben/aufgaben', 'linkbox'); ?>
+            if ($chapters->have_posts()) {
+                while ($chapters->have_posts()) {
+                    $chapters->the_post();
+                    $tasks = new WP_Query(
+                        array(
+                            'post_type'         => 'aufgaben',
+                            'order'             => 'ASC',
+                            'orderby'           => 'name',
+                            'posts_per_page'    => -1,
+                            'meta_key'		    => 'kapitel',
+                            'meta_value'	    => get_the_ID(),
+                        )
+                    ); ?>
+
+                    <div class="col-12 my-4">
+
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+                            <h2 class="h1-mktg text-gray-dark border-bottom">
+                                <?php the_title(); ?>
+                            </h2>
+                        </a>
 
                     </div>
 
-                <?php
+        <?php
+                    if ($tasks->have_posts()) {
+                        while ($tasks->have_posts()) {
+                            $tasks->the_post(); ?>
+
+                            <div class="col-12 col-md-6 mb-2">
+                            
+                                <?php get_template_part('template-parts/aufgaben/aufgaben', 'linkbox'); ?>
+
+                            </div>
+
+            <?php
+                        }
+                    } else { ?>
+
+                        <div class="col-12">
+
+                            <div class="flash flash-warn">
+                                <?php _e('Es sind noch keine Aufgaben diesem Kapitel zugeordnet.', 'prolog'); ?>
+                            </div>
+
+                        </div>
+
+            <?php
+                    }
+                    wp_reset_postdata(); ?>
+
+            <?php
                 }
             }
-            wp_reset_postdata();
+                wp_reset_postdata();
         ?>
 
     </div>
