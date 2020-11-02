@@ -22,6 +22,25 @@
                 <?php get_template_part('template-parts/octicon/octicon', 'github24'); ?>
             </a>
 
+
+            <?php if (is_user_logged_in()) { ?>
+
+                <a  class="text-white text-underline" 
+                    href="<?php echo wp_logout_url(); ?>" 
+                    title="<?php _e('Logout', 'prolog') ?>">
+                        <?php _e('Logout', 'prolog') ?>
+                </a>
+
+            <?php } else { ?>
+
+                <a  class="text-white text-underline" 
+                    href="<?php echo wp_login_url(); ?>" 
+                    title="<?php _e('Login', 'prolog') ?>">
+                        <?php _e('Login', 'prolog') ?>
+                </a>
+
+            <?php } ?>
+
             <?php
                 wp_nav_menu(array(
                         'container_class' => 'text-white',
