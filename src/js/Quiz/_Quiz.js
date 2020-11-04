@@ -1,4 +1,6 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
+
+import { listUnique } from '../Utils';
 
 import ChoiceAnswer from "./_ChoiceAnswer";
 import DropdownAnswer from "./_DropdownAnswer";
@@ -75,7 +77,11 @@ class Quiz {
       this.response.classList.add("flash-success");
       this.response.innerHTML = config["DefaultResponseTrue"];
 
+      // update and make list items unique
       this.progress["progress"].push(window.location.pathname);
+      this.progress["progress"] = listUnique(this.progress["progress"]);
+
+      // update cookie
       Cookies.set('quiz_progress', this.progress)
     }
     // quiz failed
