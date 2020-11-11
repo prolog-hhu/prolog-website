@@ -1,3 +1,5 @@
+import RandExp from "randexp";
+
 import Answer from "./_Answer";
 
 export default class InputAnswer extends Answer {
@@ -6,6 +8,9 @@ export default class InputAnswer extends Answer {
 
     // get embbed answer data
     this.data = JSON.parse(this.interaction.dataset.answers);
+    
+    // regex generator data
+    this.regen = null;
   }
 
   updateState() {
@@ -49,6 +54,16 @@ export default class InputAnswer extends Answer {
   }
 
   solve() {
-    console.log("Missing Implementation");
+
+    for (const item of this.data) {
+      if (item["correct"] && this.regen != item) {
+        this.regen = item;
+        break;
+      }
+    }
+
+    let randexp = new RandExp(this.regen["content"]);
+    randexp.max = 1;
+    this.interaction.value = randexp.gen();
   }
 }
