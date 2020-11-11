@@ -26,7 +26,7 @@
     <?php // Check quiz links exists and loop through
     if (have_rows('quizzes')) { ?>
 
-        <ul>
+        <ul class="Box-list">
 
             <?php
             while (have_rows('quizzes')) {

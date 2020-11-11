@@ -1,44 +1,42 @@
 .wp-block-column {
+  margin-top: $spacer-3;
+  margin-bottom: $spacer-3;
 
+  h2 {
+    margin-bottom: $spacer-3;
+  }
+
+  h3 {
+    margin-bottom: $spacer-1;
+  }
+
+  p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: $spacer-3;
+  }
+
+  p,
+  ul,
+  ol,
+  pre,
+  blockquote {
+    + h2,
+    + h3 {
+      margin-top: $spacer-6;
+    }
+  }
+}
+
+main {
+  ul:not([class]),
+  ol:not([class]) {
+    padding-left: $spacer-3;
     margin-top: $spacer-3;
     margin-bottom: $spacer-3;
 
-    h2 {
-        margin-bottom: $spacer-3;
+    li {
+      padding-bottom: $spacer-2;
     }
-
-    h3 {
-        margin-bottom: $spacer-1;
-    }
-
-    p {
-        font-size: 16px;
-        margin-top: 0;
-        margin-bottom: $spacer-3;
-    }
-
-    ul:not([class]),
-    ol:not([class]) {
-        padding-left: $spacer-3;
-        margin-top: $spacer-3;
-        margin-bottom: $spacer-3;
-
-        li {
-            font-size: 16px;
-            padding-bottom: $spacer-2;
-        }
-    }
-
-    p,
-    ul,
-    ol,
-    pre,
-    blockquote {
-
-        +h2,
-        +h3 {
-
-            margin-top: $spacer-6;
-        }
-    }
+  }
 }
