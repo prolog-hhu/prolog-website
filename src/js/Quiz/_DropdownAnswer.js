@@ -19,4 +19,18 @@ export default class DropdownAnswer extends Answer {
     }
     return this.state;
   }
+
+  solve() {
+    let idx;
+
+    for (let i = 0; i < this.interaction.options.length; i++) {
+
+        if (this.interaction.options[i].hasAttribute("correct")) {
+            idx = i;
+            break;
+        }
+    }
+
+    this.interaction.selectedIndex = idx
+  }
 }

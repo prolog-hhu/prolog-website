@@ -47,4 +47,8 @@ export default class InputAnswer extends Answer {
     }
     return this.state;
   }
+
+  solve() {
+    console.log("Missing Implementation");
+  }
 }

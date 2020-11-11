@@ -11,10 +11,13 @@ class Quiz {
     // save self DOM element, state handler
     this.quiz = el;
     this.state = null;
+    this.submitCount = 0;
 
     // construct sub components
     this.answers = this.constructAnswers();
     this.submit = this.constructSubmit();
+    this.solve = this.constructSolve();
+
     this.response = this.quiz.querySelector(".return");
 
     this.progress = this.getProgress();
@@ -51,10 +54,22 @@ class Quiz {
     return submit;
   }
 
+  constructSolve() {
+    let solve = this.quiz.querySelector('button#solve');
+    solve.addEventListener("click", this.handleSolve.bind(this), false);
+
+    return solve;
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
     this.state = true;
+
+    this.submitCount += 1;
+    if(this.submitCount > 3) {
+      this.solve.classList.remove("muted-link")
+    }
 
     this.answers.forEach((item) => {
       if (item.updateState() === false) {
@@ -91,6 +106,18 @@ class Quiz {
       this.response.classList.add("flash-error");
       this.response.innerHTML = config["DefaultResponseFalse"];
     }
+  }
+
+  handleSolve(e) {
+      e.preventDefault();
+
+      if(this.submitCount > 3) {
+        this.answers.forEach((item) => {
+          item.solve();
+        })
+
+        this.handleSubmit(e);
+      }
   }
 
   getProgress() {

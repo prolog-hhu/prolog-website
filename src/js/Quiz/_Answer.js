@@ -34,6 +34,10 @@ export default class Answer {
     }
   }
 
+  solve() {
+    throw InternalError("Method not implemented by Sublass!");
+  }
+
   _setResponse(content) {
     if (this.response != undefined) {
       this.response.innerHTML = content;

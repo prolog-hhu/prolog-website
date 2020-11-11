@@ -21,4 +21,9 @@ export default class ChoiceAnswer extends Answer {
     }
     return this.state;
   }
+
+  solve() {
+    if(this.interaction.hasAttribute("correct"))
+      this.interaction.checked = true
+  }
 }
