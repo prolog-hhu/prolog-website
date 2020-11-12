@@ -54,7 +54,7 @@ $questionDescription = $question['description'];
         <?php _e('Überprüfen', 'prolog') ?>
     </button>
     <button 
-        class="btn-link ml-2 f6 muted-link"
+        class="btn-link ml-2 f6 v-hidden"
         type="button"
         id="solve" 
     >

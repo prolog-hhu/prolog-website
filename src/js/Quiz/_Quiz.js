@@ -68,7 +68,7 @@ class Quiz {
 
     this.submitCount += 1;
     if(this.submitCount > 3) {
-      this.solve.classList.remove("muted-link")
+      this.solve.classList.remove("v-hidden")
     }
 
     this.answers.forEach((item) => {
