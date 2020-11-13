@@ -11,7 +11,7 @@
   "author": "Simon Münker",
   "license": "MIT",
   "dependencies": {
-    "@primer/css": "^15.0.0",
+    "@primer/css": "^15.2.0",
     "jquery": "^3.5.1",
     "js-cookie": "^2.2.1",
     "randexp": "^0.5.3"
