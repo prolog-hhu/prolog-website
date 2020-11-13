@@ -18,7 +18,7 @@ $musterloesungAnzeigen = get_field('musterlosung_anzeigen');
 ?>
 
 <div class="col-12 col-md-6 mb-5">
-    <article class="collapse py-3 px-4 border border-gray-light">
+    <article class="collapse py-3 px-4 border border-gray-light rounded-3">
 
         <div class="header">
             <h3 class="h2">
